@@ -1,0 +1,941 @@
+﻿// Заменяем свои предметы с указанными ID на эти:
+// Делает все бг вещи передаваемыми/продаваемыми и тп
+
+
+{
+	Id: 1632
+	AegisName: "BF_Staff1"
+	Name: "Warlock's Magic Wand"
+	Type: 4
+	Buy: 20
+	Atk: 70
+	Matk: 125
+	Range: 1
+	Job: 0x00818314
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 10
+	Script: <"
+		bonus bInt,4;
+		bonus bDex,3;
+		bonus2 bIgnoreMdefRate,RC_DemiPlayer,25;
+		bonus3 bAddEff,Eff_Stun,500,ATF_SKILL;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+{
+	Id: 1633
+	AegisName: "BF_Staff2"
+	Name: "Warlock's Battle Wand"
+	Type: 4
+	Buy: 20
+	Atk: 70
+	Matk: 125
+	Range: 1
+	Job: 0x00818314
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 10
+	Script: <"
+		bonus bInt,3;
+		bonus bDex,3;
+		bonus2 bMagicAddRace,RC_DemiPlayer,15;
+		bonus3 bAddEff,Eff_Stun,500,ATF_SKILL;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+{
+	Id: 13037
+	AegisName: "BF_Dagger2"
+	Name: "Valorous Assassin's Damascus"
+	Type: 4
+	Buy: 20
+	Atk: 120
+	Range: 1
+	Job: 0xFE9F7EEF
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 1
+	Script: <"
+		bonus bStr,1;
+		bonus bAgi,1;
+		bonus2 bAddRace,RC_DemiPlayer,75;
+		bonus bUnbreakableWeapon,0;
+		autobonus "{ bonus bDefRatioAtkRace, RC_All; }",10,6000,BF_WEAPON,"{ specialeffect2 EF_HASTEUP; }";
+		if(Class==Job_Ninja||Class==Job_Rogue||Class==Job_Stalker) bonus bMatkRate,15;
+	">
+},
+
+
+{
+	Id: 1184
+	AegisName: "BF_Two_Handed_Sword2"
+	Name: "Valorous Assaulter's Katzbalger"
+	Type: 4
+	Buy: 20
+	Atk: 200
+	Range: 1
+	Job: 0x00004082
+	Loc: 34
+	WeaponLv: 3
+	EquipLv: 80
+	View: 3
+	Script: <"
+		bonus bCritical,20;
+		bonus2 bAddRace,RC_DemiPlayer,55;
+		bonus bCritAtkRate,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 1738
+	AegisName: "BF_Bow1"
+	Name: "Valorous Battle CrossBow"
+	Type: 4
+	Buy: 0
+	Atk: 100
+	Range: 5
+	Job: 0x000A0848
+	Loc: 34
+	WeaponLv: 3
+	EquipLv: 80
+	View: 11
+	Script: <"
+		bonus bDex,2;
+		bonus2 bAddRace,RC_DemiPlayer,55;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+{
+	Id: 1823
+	AegisName: "BF_Knuckle1"
+	Name: "Valorous Battle Fist"
+	Type: 4
+	Buy: 20
+	Atk: 30
+	Range: 1
+	Job: 0x00008100
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 12
+	Script: <"
+		bonus bStr,2;
+		bonus bAgi,1;
+		bonus2 bAddRace,RC_DemiPlayer,95;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus4 bAutoSpell,CH_SOULCOLLECT,1,5,0;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+{
+	Id: 1977
+	AegisName: "BF_Whip1"
+	Name: "Valorous Battle Lariat"
+	Type: 4
+	Buy: 20
+	Atk: 50
+	Range: 2
+	Job: 0x00080000
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 14
+	Script: <"
+		bonus bDex,2;
+		bonus2 bAddRace,RC_DemiPlayer,95;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 1575
+	AegisName: "BF_Book2"
+	Name: "Valorous Battle Strategy Book"
+	Type: 4
+	Buy: 20
+	Atk: 90
+	Range: 1
+	Job: 0x00410100
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 15
+	Script: <"
+		bonus bStr,2;
+		bonus bInt,1;
+		bonus bMatkRate,15;
+		bonus2 bIgnoreMdefRate,RC_DemiPlayer,25;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 1923
+	AegisName: "BF_Instrument1"
+	Name: "Valorous Battlefield Guitar"
+	Type: 4
+	Buy: 20
+	Atk: 50
+	Range: 1
+	Job: 0x00080000
+	Gender: 1
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 13
+	Script: <"
+		bonus bDex,2;
+		bonus2 bAddRace,RC_DemiPlayer,95;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 1542
+	AegisName: "BF_Morning_Star1"
+	Name: "Valorous Battlefield Morning Star"
+	Type: 4
+	Buy: 20
+	Atk: 105
+	Range: 1
+	Job: 0x0004C5B3
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 8
+	Script: <"
+		bonus bStr,1;
+		bonus bDex,1;
+		bonus2 bAddRace,RC_DemiPlayer,75;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 1280
+	AegisName: "BF_Katar2"
+	Name: "Valorous Carnage Katar"
+	Type: 4
+	Buy: 20
+	Atk: 130
+	Range: 1
+	Job: 0x00001000
+	Loc: 34
+	WeaponLv: 3
+	EquipLv: 80
+	View: 16
+	Script: <"
+		bonus bStr,1;
+		bonus bDex,1;
+		bonus bLuk,1;
+		bonus2 bAddRace,RC_DemiPlayer,70;
+		bonus bCritAtkRate,20;
+		bonus bAspdRate,5;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 13410
+	AegisName: "BF_Sword1"
+	Name: "Valorous Gladiator Blade"
+	Type: 4
+	Buy: 20
+	Atk: 115
+	Range: 1
+	Job: 0x000654E3
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 2
+	Script: <"
+		bonus bStr,1;
+		bonus bDex,1;
+		bonus2 bAddRace,RC_DemiPlayer,75;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 13306
+	AegisName: "BF_Huuma_Shuriken2"
+	Name: "Valorous Huuma Front Shuriken"
+	Type: 4
+	Buy: 20
+	Atk: 55
+	Range: 1
+	Job: 0x02000000
+	Loc: 34
+	WeaponLv: 3
+	EquipLv: 80
+	View: 22
+	Script: <"
+		bonus bStr,2;
+		bonus bDex,1;
+		bonus2 bAddRace,RC_DemiPlayer,95;
+		autobonus "{ bonus2 bSkillAtk,NJ_HUUMA,100; bonus2 bSkillAtk,NJ_ISSEN,100; }",50,10000,BF_WEAPON,"{specialeffect2 EF_POTION_BERSERK; }";
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 1379
+	AegisName: "BF_Two_Handed_Axe1"
+	Name: "Valorous Insane Battle Axe"
+	Type: 4
+	Buy: 20
+	Atk: 200
+	Range: 1
+	Job: 0x000444A2
+	Loc: 34
+	WeaponLv: 3
+	EquipLv: 80
+	View: 7
+	Script: <"
+		bonus bStr,3;
+		bonus2 bAddRace,RC_DemiPlayer,55;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 13036
+	AegisName: "BF_Dagger1"
+	Name: "Brave Assassin's Damascus"
+	Type: 4
+	Buy: 20
+	Atk: 120
+	Range: 1
+	Job: 0xFE9F7EEF
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 1
+	Script: <"
+		bonus bStr,1;
+		bonus bAgi,1;
+		bonus2 bAddRace,RC_DemiPlayer,75;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+		if(Class==Job_Ninja||Class==Job_Rogue||Class==Job_Stalker) bonus bMatkRate,15;
+	">
+},
+
+
+{
+	Id: 1183
+	AegisName: "BF_Two_Handed_Sword1"
+	Name: "Brave Assaulter's Katzbalger"
+	Type: 4
+	Buy: 20
+	Atk: 200
+	Range: 1
+	Job: 0x00004082
+	Loc: 34
+	WeaponLv: 3
+	EquipLv: 80
+	View: 3
+	Script: <"
+		bonus bStr,2;
+		bonus2 bAddRace,RC_DemiPlayer,55;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 1739
+	AegisName: "BF_Bow2"
+	Name: "Brave Battle CrossBow"
+	Type: 4
+	Buy: 0
+	Atk: 100
+	Range: 5
+	Job: 0x000A0848
+	Loc: 34
+	WeaponLv: 3
+	EquipLv: 80
+	View: 11
+	Script: <"
+		bonus bDex,2;
+		bonus bInt,10;
+		bonus2 bAddRace,RC_DemiPlayer,55;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 1824
+	AegisName: "BF_Knuckle2"
+	Name: "Brave Battle Fist"
+	Type: 4
+	Buy: 20
+	Atk: 30
+	Range: 1
+	Job: 0x00008100
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 12
+	Script: <"
+		bonus bStr,2;
+		bonus bInt,1;
+		bonus2 bAddRace,RC_DemiPlayer,95;
+		bonus2 bCastrate,MO_EXTREMITYFIST,-25;
+		autobonus "{ bonus2 bCastrate,MO_EXTREMITYFIST,-100; }",50,6000,BF_WEAPON,"{ specialeffect2 EF_SUFFRAGIUM; }";
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+{
+	Id: 1978
+	AegisName: "BF_Whip2"
+	Name: "Brave Battle Lariat"
+	Type: 4
+	Buy: 20
+	Atk: 50
+	Range: 2
+	Job: 0x00080000
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 14
+	Script: <"
+		bonus bDex,2;
+		bonus2 bAddRace,RC_DemiPlayer,95;
+		bonus2 bSkillAtk,CG_ARROWVULCAN,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+{
+	Id: 1574
+	AegisName: "BF_Book1"
+	Name: "Brave Battle Strategy Book"
+	Type: 4
+	Buy: 20
+	Atk: 90
+	Range: 1
+	Job: 0x00410100
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 15
+	Script: <"
+		bonus bStr,2;
+		bonus bInt,1;
+		bonus bMatkRate,15;
+		bonus2 bAddRace,RC_DemiPlayer,75;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 1924
+	AegisName: "BF_Instrument2"
+	Name: "Brave Battlefield Guitar"
+	Type: 4
+	Buy: 20
+	Atk: 50
+	Range: 1
+	Job: 0x00080000
+	Gender: 1
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 13
+	Script: <"
+		bonus bDex,2;
+		bonus2 bAddRace,RC_DemiPlayer,95;
+		bonus2 bSkillAtk,CG_ARROWVULCAN,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+{
+	Id: 1543
+	AegisName: "BF_Morning_Star2"
+	Name: "Brave Battlefield Morning Star"
+	Type: 4
+	Buy: 20
+	Atk: 105
+	Range: 1
+	Job: 0x0004C5B3
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 8
+	Script: <"
+		bonus bStr,1;
+		bonus bDex,1;
+		bonus2 bAddRace,RC_DemiPlayer,75;
+		bonus bUnbreakableWeapon,0;
+		autobonus "{ bonus2 bAddEff,Eff_Stun,5000; }",10,6000,BF_WEAPON,"{ specialeffect2 EF_POTION_BERSERK; }";
+	">
+},
+
+{
+	Id: 1279
+	AegisName: "BF_Katar1"
+	Name: "Brave Carnage Katar"
+	Type: 4
+	Buy: 20
+	Atk: 130
+	Range: 1
+	Job: 0x00001000
+	Loc: 34
+	WeaponLv: 3
+	EquipLv: 80
+	View: 16
+	Script: <"
+		bonus bStr,1;
+		bonus bDex,1;
+		bonus bLuk,1;
+		bonus2 bAddRace,RC_DemiPlayer,70;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 13411
+	AegisName: "BF_Sword2"
+	Name: "Brave Gladiator Blade"
+	Type: 4
+	Buy: 20
+	Atk: 115
+	Range: 1
+	Job: 0x000654E3
+	Loc: 2
+	WeaponLv: 3
+	EquipLv: 80
+	View: 2
+	Script: <"
+		bonus bStr,1;
+		bonus bDex,1;
+		bonus2 bAddRace,RC_DemiPlayer,75;
+		bonus bMatkRate,10;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 13305
+	AegisName: "BF_Huuma_Shuriken1"
+	Name: "Brave Huuma Front Shuriken"
+	Type: 4
+	Buy: 20
+	Atk: 55
+	Range: 1
+	Job: 0x02000000
+	Loc: 34
+	WeaponLv: 3
+	EquipLv: 80
+	View: 22
+	Script: <"
+		bonus bStr,2;
+		bonus bDex,1;
+		bonus2 bAddRace,RC_DemiPlayer,95;
+		bonus2 bIgnoreDefRate,RC_DemiPlayer,20;
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 1380
+	AegisName: "BF_Two_Handed_Axe2"
+	Name: "Brave Insane Battle Axe"
+	Type: 4
+	Buy: 20
+	Atk: 200
+	Range: 1
+	Job: 0x000444A2
+	Loc: 34
+	WeaponLv: 3
+	EquipLv: 80
+	View: 7
+	Script: <"
+		bonus bStr,3;
+		bonus2 bAddRace,RC_DemiPlayer,55;
+		autobonus "{ bonus bBreakArmorRate,10000; }",20,3000,BF_WEAPON,"{ specialeffect2 EF_POTION_BERSERK; }";
+		bonus bUnbreakableWeapon,0;
+	">
+},
+
+
+{
+	Id: 2538
+	AegisName: "Commander_Manteau"
+	Name: "Captain's Manteau"
+	Type: 5
+	Buy: 10
+	Def: 4
+	Slots: 1
+	Job: 0x026654E2
+	Loc: 4
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,50;
+		bonus bMdef,1;
+		bonus2 bSubRace,RC_DemiPlayer,1;
+	">
+},
+
+
+{
+	Id: 2539
+	AegisName: "Commander_Manteau_"
+	Name: "Commander's Manteau"
+	Type: 5
+	Buy: 10
+	Def: 3
+	Slots: 1
+	Job: 0x00898B1C
+	Loc: 4
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,50;
+		bonus bMdef,1;
+		bonus2 bSubRace,RC_DemiPlayer,1;
+	">
+},
+{
+	Id: 2540
+	AegisName: "Sheriff_Manteau"
+	Name: "Sheriff's Manteau"
+	Type: 5
+	Buy: 10
+	Def: 3
+	Slots: 1
+	Job: 0x01000000
+	Loc: 4
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,50;
+		bonus bMdef,1;
+		bonus2 bSubRace,RC_DemiPlayer,1;
+	">
+}
+
+
+{
+	Id: 2435
+	AegisName: "Battle_Greave"
+	Name: "Battle Greaves"
+	Type: 5
+	Buy: 10
+	Def: 4
+	Slots: 1
+	Job: 0x026654E2
+	Loc: 64
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,100;
+		bonus bMdef,1;
+		bonus2 bSubRace,RC_DemiPlayer,1;
+	">
+},
+{
+	Id: 2436
+	AegisName: "Combat_Boots"
+	Name: "Combat Boots"
+	Type: 5
+	Buy: 10
+	Def: 3
+	Slots: 1
+	Job: 0x00898B1C
+	Loc: 64
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,100;
+		bonus bMdef,1;
+		bonus2 bSubRace,RC_DemiPlayer,1;
+	">
+},
+{
+	Id: 2437
+	AegisName: "Battle_Boots"
+	Name: "Battle Boots"
+	Type: 5
+	Buy: 10
+	Def: 3
+	Slots: 1
+	Job: 0x01000000
+	Loc: 64
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,100;
+		bonus bMdef,1;
+		bonus2 bSubRace,RC_DemiPlayer,1;
+	">
+},
+
+
+{
+	Id: 2376
+	AegisName: "Assaulter_Plate"
+	Name: "Assaulter Plate"
+	Type: 5
+	Buy: 10
+	Def: 7
+	Slots: 1
+	Job: 0x006444A2
+	Loc: 16
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,150;
+		bonus bMdef,2;
+		bonus2 bSubRace,RC_DemiPlayer,2;
+	">
+},
+{
+	Id: 2377
+	AegisName: "Elite_Engineer_Armor"
+	Name: "Elite Engineer Armor"
+	Type: 5
+	Buy: 10
+	Def: 7
+	Slots: 1
+	Job: 0x00040420
+	Loc: 16
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,150;
+		bonus bMdef,2;
+		bonus2 bSubRace,RC_DemiPlayer,2;
+	">
+},
+{
+	Id: 2378
+	AegisName: "Assassin_Robe"
+	Name: "Assassin Robe"
+	Type: 5
+	Buy: 10
+	Def: 7
+	Slots: 1
+	Job: 0x02021040
+	Loc: 16
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,150;
+		bonus bMdef,2;
+		bonus2 bSubRace,RC_DemiPlayer,2;
+	">
+},
+{
+	Id: 2379
+	AegisName: "Warlock_Battle_Robe"
+	Name: "Warlock's Battle Robe"
+	Type: 5
+	Buy: 10
+	Def: 3
+	Slots: 1
+	Job: 0x00810204
+	Loc: 16
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,150;
+		bonus bMdef,2;
+		bonus2 bSubRace,RC_DemiPlayer,2;
+	">
+},
+{
+	Id: 2380
+	AegisName: "Medic_Robe"
+	Name: "Medic's Robe"
+	Type: 5
+	Buy: 10
+	Def: 3
+	Slots: 1
+	Job: 0x00008110
+	Loc: 16
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,150;
+		bonus bMdef,2;
+		bonus2 bSubRace,RC_DemiPlayer,2;
+	">
+},
+{
+	Id: 2381
+	AegisName: "Elite_Archer_Suit"
+	Name: "Elite Archer Suit"
+	Type: 5
+	Buy: 10
+	Def: 3
+	Slots: 1
+	Job: 0x00080808
+	Loc: 16
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,150;
+		bonus bMdef,2;
+		bonus2 bSubRace,RC_DemiPlayer,2;
+	">
+},
+{
+	Id: 2382
+	AegisName: "Elite_Shooter_Suit"
+	Name: "Elite Shooter Suit"
+	Type: 5
+	Buy: 10
+	Def: 3
+	Slots: 1
+	Job: 0x01000000
+	Loc: 16
+	EquipLv: 80
+	Script: <"
+		bonus bMaxHP,150;
+		bonus bMdef,2;
+		bonus2 bSubRace,RC_DemiPlayer,2;
+	">
+},
+
+{
+	Id: 2720
+	AegisName: "Medal_Swordman"
+	Name: "Medal of Honor"
+	Type: 5
+	Buy: 20
+	Def: 1
+	Job: 0x00404082
+	Loc: 136
+	EquipLv: 70
+	Refine: false
+	Script: <"
+		bonus2 bAddRace, RC_All, 5;
+		bonus bMatkRate,5;
+		bonus bHit,10;
+		bonus bMaxHP,500;
+		bonus bMaxSP,50;
+		bonus3 bAddEff,Eff_Stun,100,ATF_SHORT;
+	">
+},
+{
+	Id: 2721
+	AegisName: "Medal_Thief"
+	Name: "Medal of Honor"
+	Type: 5
+	Buy: 20
+	Def: 1
+	Job: 0x02021040
+	Loc: 136
+	EquipLv: 70
+	Refine: false
+	Script: <"
+		bonus2 bAddRace, RC_All, 5;
+		bonus bMatkRate,5;
+		bonus bFlee,10;
+		bonus bMaxHP,300;
+		bonus bMaxSP,80;
+		bonus3 bAddEff,Eff_Poison,100,ATF_SHORT;
+	">
+},
+{
+	Id: 2722
+	AegisName: "Medal_Acolyte"
+	Name: "Medal of Honor"
+	Type: 5
+	Buy: 20
+	Def: 1
+	Job: 0x00008110
+	Loc: 136
+	EquipLv: 70
+	Refine: false
+	Script: <"
+		bonus2 bAddRace, RC_All, 5;
+		bonus bMatkRate,5;
+		bonus bMdef,6;
+		bonus bMaxHP,600;
+		bonus3 bAddEff,Eff_Silence,100,ATF_SHORT;
+	">
+},
+{
+	Id: 2723
+	AegisName: "Medal_Mage"
+	Name: "Medal of Honor"
+	Type: 5
+	Buy: 20
+	Def: 1
+	Job: 0x00810204
+	Loc: 136
+	EquipLv: 70
+	Refine: false
+	Script: <"
+		bonus2 bAddRace, RC_All, 5;
+		bonus bMatkRate,5;
+		bonus bMdef,6;
+		bonus bMaxHP,600;
+		bonus2 bAddEffWhenHit,Eff_Stone,100;
+	">
+},
+{
+	Id: 2724
+	AegisName: "Medal_Archer"
+	Name: "Medal of Honor"
+	Type: 5
+	Buy: 20
+	Def: 1
+	Job: 0x00080808
+	Loc: 136
+	EquipLv: 70
+	Refine: false
+	Script: <"
+		bonus2 bAddRace, RC_All, 5;
+		bonus bMatkRate,5;
+		bonus bCritical,10;
+		bonus bMaxHP,300;
+		bonus bMaxSP,80;
+		bonus3 bAddEff,Eff_Blind,100,ATF_LONG;
+	">
+},
+{
+	Id: 2725
+	AegisName: "Medal_Merchant"
+	Name: "Medal of Honor"
+	Type: 5
+	Buy: 20
+	Def: 1
+	Job: 0x00040420
+	Loc: 136
+	EquipLv: 70
+	Refine: false
+	Script: <"
+		bonus2 bAddRace, RC_All, 5;
+		bonus bMatkRate,5;
+		bonus bAspdRate,10;
+		bonus bMaxHP,500;
+		bonus bMaxSP,50;
+		bonus3 bAddEff,Eff_Curse,100,ATF_SHORT;
+	">
+},

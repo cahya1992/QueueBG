@@ -1,0 +1,389 @@
+//= Если этот код работает, то его написал Kubix
+//= если нет, то я понятия не имею кто это кодил
+function	script	bgJoin_Custom	{
+	if( !getarg(0) || !getarg(1) )
+		return 0;
+	
+	.@team1players = queuesize($@Guill_QueueBG1);
+	.@team2players = queuesize($@Croix_QueueBG1);
+	.@qid1 = queueiterator($@Guill_QueueBG1);
+	.@qid2 = queueiterator($@Croix_QueueBG1);
+	for( .@i = 0; .@i < getvariableofnpc( .bgMax, "Battle Recruiter" ); .@i ++ )
+	{
+		if( qiget(.@qid1) == get_unique_id() || qiget(.@qid2) == get_unique_id() )
+			return -3;
+	}
+	
+	if( getarg(2) == 1 && .@team1players >= getarg(1) && .@team2players >= getarg(1) )	
+		return -5;
+	else if( getarg(2) == 3 && .@team1players >= getvariableofnpc( .bgMax, "Battle Recruiter") && .@team2players >= getvariableofnpc( .bgMax, "Battle Recruiter") )
+		return -5;
+	
+	if( .@team1players > .@team2players )
+	{
+		// Регистрируем игроков за Croix
+		if( getarg(2) == 1 && .@team2players >= getarg(1) )
+			return -4; 
+		
+		if( queueadd( $@Croix_QueueBG1, get_unique_id() ) == false )
+			return -3;
+		
+		if( getarg(2) == 3)
+			return 3;
+		
+		switch( bg_join_team( $@bgId_2 ) )
+		{
+			case -1:
+				return -1;
+			case 1:
+			case 0:
+				return ( getarg(2) == 3? 3:1 );
+		}
+	}
+	else if( .@team2players > .@team1players )
+	{
+		// Регистрируем игроков за Guillame
+		if( getarg(2) == 1 && .@team1players >= getarg(1) )
+			return -4; 
+		
+		if( queueadd( $@Guill_QueueBG1, get_unique_id() ) == false )
+			return -3;
+		
+		if( getarg(2) == 3)
+			return 2;
+		
+		switch( bg_join_team( $@bgId_1 ) )
+		{
+			case -1:
+				return -1;
+			case 1:
+			case 0:
+				return ( getarg(2) == 3? 2:1 );
+		}		
+	}
+	else if( .@team1players == .@team2players )
+	{
+		// Регистрируем игроков за Guillame
+		if( getarg(2) == 1 && .@team1players >= getarg(1) )
+			return -4; 
+		
+		if( queueadd( $@Guill_QueueBG1, get_unique_id() ) == false )
+			return -3;
+		
+		if( getarg(2) == 3)
+			return 2;
+		
+		switch( bg_join_team( $@bgId_1 ) )
+		{
+			case -1:
+				return -1;
+			case 1:
+			case 0:
+				return ( getarg(2) == 3? 2:1 );
+		}		
+	}
+}
+
+
+
+function	script	cleanBgQuests	{
+	for(.@i = 8500; .@i < 8511; .@i ++)
+		if( (.@i != 8506 && questprogress(.@i, PLAYTIME) ) )
+			erasequest .@i;
+	return;
+}
+
+ironbridge,129,119,3	script	Battle Recruiter	4_F_JOB_KNIGHT,{
+	OnJoinBG:
+	if( .@error ) .@error = false;
+	if( BaseLevel < 80 || getcharid(4) )
+		.@error = true;
+	
+	.@qid1 = queueiterator($@Guill_QueueBG1);
+	.@qid2 = queueiterator($@Croix_QueueBG1);
+	
+	if( .cleanQuests )
+		cleanBgQuests();
+	
+	if( .Index >= 0 )
+	{
+		mes "[^FFA500Battle Recruiter^000000]";
+		mes "Здравствуйте, ^41AFAD" + strcharinfo(0) + "^000000";
+		mes "Чем я могу Вам помочь?";
+		freeloop(1);
+		for( .@i = 0; .@i < .bgMax; .@i ++ )
+		{
+			if( qiget(.@qid1) == get_unique_id() || qiget(.@qid2) == get_unique_id() )
+				.@error = true;
+		}
+		freeloop(0);
+		mes "Регистрация для Вас: " + ( .@error? "^FF0000Недоступна^000000":"^00FF00Доступна^000000");
+		if( .@error ) 
+		{
+			if(select("Выйти из очереди:Войти в магазин") == 2)
+			{
+				if( .BattleState == 1 )
+					warp "bat_room", 154, 149;
+				close;
+			}
+			
+			if( getcharid(4) )
+			{
+				bg_leave;
+				if( getcharid(4) == $@bgId_1 )
+					queueremove($@Guill_QueueBG1, get_unique_id());
+				else if( getcharid(4) == $@bgId_2 )
+					queueremove($@Croix_QueueBG1, get_unique_id());
+			}
+			close;
+		}
+		
+		if( $@BGStatus )
+		{
+			mes "Поле боя на перезагрузке, подождите немного.";
+			close;
+		}
+		next;
+		switch( select("^483D8BBattlegrounds^000000:Войти в магазин") )
+		{
+			case 1:
+				switch( select("Регистрация - ^00BFFF[" + .bgNames$[ .Index ] + "]^000000:Отмена") )
+				{
+					case 1:
+						mes "[^FFA500Battle Recruiter^000000]";
+						if( questprogress(8506, PLAYTIME) == 2 )
+							erasequest 8506;
+						else if( questprogress(8506, PLAYTIME) == 1 )
+						{
+							mes "Вы дезертир.";
+							close;
+						}
+						
+						switch( .BattleState )
+						{
+							case 1:
+								switch( bgJoin_Custom( getcharid(0), .bgPlayer[.Index], .BattleState ) )
+								{
+									case -5:
+										mes "Максимальное количество участников уже зарегистрированы.";
+										break;
+									case -4:
+										mes "Команда уже набрана.";
+										break;
+									case -3:
+										mes "Вы или другой Ваш персонаж уже в очереди.";
+										break;
+									case -2:
+										mes "Ошибка добавления в BG команду.";
+										break;
+									case -1:
+										mes "Игрок не найден.";
+										break;
+									case 0:
+										mes "Вы уже в одной из команд.";
+										break;
+									case 1:
+										mes "Вы успешно добавлены в очередь.";
+										break;
+								}
+								close;
+							
+							case 2:
+								mes "Поле боя уже началось.";
+								break;
+								
+							case 3:
+								switch( bgJoin_Custom( getcharid(0), .bgPlayer[.Index], .BattleState ) )
+								{
+									case -5:
+										mes "Максимальное количество участников уже зарегистрированы.";
+										break;
+									case -4:
+										mes "Команда уже набрана.";
+										break;
+									case -3:
+										mes "Вы или другой Ваш персонаж уже в очереди.";
+										break;
+									case -2:
+										mes "Ошибка добавления в BG команду.";
+										break;
+									case -1:
+										mes "Игрок не найден.";
+										break;
+									case 0:
+										mes "Вы уже в одной из команд.";
+										break;
+									case 1:
+										mes "Вы успешно добавлены в очередь.";
+										break;
+										
+									case 2:
+										if( .Index == 2)
+										{
+											if( $@bgId_1 == getvariableofnpc( .Atacker, "Conquest" ) )
+											{
+												.x = getvariableofnpc( .AX, "Conquest" );
+												.y = getvariableofnpc( .AY, "Conquest" );
+											}
+											else
+											{
+												.x = getvariableofnpc( .DX, "Conquest" );
+												.y = getvariableofnpc( .DY, "Conquest" );
+											}
+											.map$ = getvariableofnpc( .Castle$, "Conquest" );
+										}
+										else
+										{
+											.x		= .bgGuillX[.Index];
+											.y		= .bgGuillY[.Index];
+											.map$	= .battleM$[.Index];
+										}
+										bg_single($@bgId_1, .map$, .x, .y);
+										announce " --- Battleground - " + .bgNames$[.Index] + " - "+bg_get_data($@bgId_1, 0)+" / "+.bgMax+" vs. "+bg_get_data($@bgId_2, 0)+" / "+.bgMax+" (играют) --- ", bc_all, .bgColor$[.Index];
+										break;
+									
+									case 3:
+										if( .Index == 2)
+										{
+											if( $@bgId_2 == getvariableofnpc( .Atacker, "Conquest" ) )
+											{
+												.x = getvariableofnpc( .AX, "Conquest" );
+												.y = getvariableofnpc( .AY, "Conquest" );
+											}
+											else
+											{
+												.x = getvariableofnpc( .DX, "Conquest" );
+												.y = getvariableofnpc( .DY, "Conquest" );
+											}
+											.map$ = getvariableofnpc( .Castle$, "Conquest" );
+										}
+										else
+										{
+											.x		= .bgCroixX[.Index];
+											.y		= .bgCroixY[.Index];
+											.map$	= .battleM$[.Index];
+										}
+										bg_single($@bgId_2, .map$, .x, .y);
+										announce " --- Battleground - " + .bgNames$[.Index] + " - "+bg_get_data($@bgId_1, 0)+" / "+.bgMax+" vs. "+bg_get_data($@bgId_2, 0)+" / "+.bgMax+" (играют) --- ", bc_all, .bgColor$[.Index];									
+										break;								
+								}
+						}
+						close;
+					
+					case 2:
+						close;
+				}
+				
+			case 2:
+				warp "bat_room", 154, 149;
+				close;
+		}
+	}
+	mes "[^FFA500Battle Recruiter^000000]";
+	mes "Произошла ошибка, обратитесь к администратору.";
+	close;
+	
+OnInit:
+	.cleanQuests = true; // Удалять квесты ? (если false - то могут быть ошибки в консоли, т.к. используется система очереди.) (дезертирство не удаляется)
+	.Tick2Rotate = 20; // Сколько анонсов должно пройти до того, как сменится бг? (с учетом того, что на предыдущее не набралось людей)
+	.bgMax = 50; // Максимальное кол-во людей в команде (захардкодено, больше не ставить.)
+	bindatcmd "joinbg", strnpcinfo(0) + "::OnJoinBG"; // устанавливаем команду
+	bindatcmd "setbg", strnpcinfo(0) + "::OnSetBG", 99, 99;
+	$@RegNPC$ = strnpcinfo(0) + "::OnRotateBG"; // название нпца для смены бг. (не трогать)
+	setarray .bgNames$[0], "Rush", "Flavius TD", "Conquest"; // Названия бг (можно поменять, если над)
+	setarray .bgReady$[0], "Rush", "Flavius_TD", "Conquest"; // Названия нпцов (не трогать)
+	setarray .bgPlayer[0], 1, 1, 1; // Минимальное кол-во людей в каждой команде для старта.
+	setarray .bgColor$[0], "0xDDA0DD", "0x808000", "0xFFA500"; // Цвета для анонсов
+	
+	setarray .battleM$[0], "rush_cas04", "bat_b03", "schg_cas06"; // Локации БГ (не трогать)
+	setarray .bgGuillX[0], 270, 390, 264; // Координаты бг (не трогать)
+	setarray .bgGuillY[0], 292, 10, 379;
+	setarray .bgCroixX[0], 270, 10, 295;
+	setarray .bgCroixY[0], 288, 290, 379;
+	
+OnRotateBG: // Меняем бг :)
+
+	if( $@bgId_1 ) bg_destroy $@bgId_1;
+	if( $@bgId_2 ) bg_destroy $@bgId_2;
+	
+	if( $@Guill_QueueBG1 ) queuedel($@Guill_QueueBG1); 
+	if( $@Croix_QueueBG1 ) queuedel($@Croix_QueueBG1);
+
+	.bgCount = getarraysize(.bgNames$);
+	if( (.Index += 1) > (.bgCount - 1) )
+		.Index = 0;
+	
+	switch( .Index ) 
+	{
+		case 2: // Conquest castle rotation.
+			$@ConIndex ++;
+			donpcevent "Conquest::OnSetRotation";
+			$@bgId_1 = bg_create_team( getvariableofnpc(.Castle$, "Conquest"), getvariableofnpc(.GX, "Conquest"), getvariableofnpc(.GY, "Conquest"), .bgReady$[.Index] + "::OnGuillameQuit", .bgReady$[.Index] + "::OnGuillameDie" );
+			$@bgId_2 = bg_create_team( getvariableofnpc(.Castle$, "Conquest"), getvariableofnpc(.CX, "Conquest"), getvariableofnpc(.CY, "Conquest"), .bgReady$[.Index] + "::OnCroixQuit", .bgReady$[.Index] + "::OnCroixDie" );
+			break;
+				
+		default:
+			$@bgId_1 = bg_create_team(.battleM$[.Index], .bgGuillX[.Index], .bgGuillY[.Index], .bgReady$[.Index] + "::OnGuillameQuit", .bgReady$[.Index] + "::OnGuillameDie" );
+			$@bgId_2 = bg_create_team(.battleM$[.Index], .bgCroixX[.Index], .bgCroixY[.Index], .bgReady$[.Index] + "::OnCroixQuit", .bgReady$[.Index] + "::OnCroixDie");
+			break;
+	}
+	
+	$@Croix_QueueBG1 = queue();
+	$@Guill_QueueBG1 = queue();
+	.bgTick = 0; // Обновляем кол-во таймера
+	.BattleState = 1; // 1 = можно регистрироваться
+	$@BGStatus = 0; // Обновление БГ закончено.
+	announce " --- Battleground - " + .bgNames$[.Index] + " - [" + bg_get_data($@bgId_1, 0) + "/" + .bgPlayer[.Index] + " - " + bg_get_data($@bgId_2, 0) + "/" + .bgPlayer[.Index] + "] --- ", bc_all, .bgColor$[.Index];
+	initnpctimer;
+	end;
+	
+OnTimer30000:
+	if( queuesize($@Croix_QueueBG1) >= .bgPlayer[.Index] && queuesize($@Guill_QueueBG1) >= .bgPlayer[.Index] )
+	{	
+		announce " --- Battleground - " + .bgNames$[.Index] + " ["+bg_get_data($@bgId_1, 0)+" - "+bg_get_data($@bgId_2, 0)+"] началось! --- ", bc_all, .bgColor$[.Index];
+		donpcevent .bgReady$[.Index] + "::OnStartBattleground";
+		.BattleState = 3;
+		stopnpctimer;
+		end;
+	}
+	
+	.bgTick ++;
+	if( .bgTick >= .Tick2Rotate )
+	{
+		stopnpctimer;
+		donpcevent $@RegNPC$;
+		end;
+	}
+	
+	if( .BgTimer < gettimetick(2) )
+	{
+		.BgTimer = gettimetick(2) + 120;
+		announce " --- Battleground - " + .bgNames$[.Index] + " - [" + queuesize($@Croix_QueueBG1) + "/" + .bgPlayer[.Index] + " - " + queuesize($@Guill_QueueBG1) + "/" + .bgPlayer[.Index] + "] --- ", bc_all, .bgColor$[.Index];
+	}
+	initnpctimer;
+	end;
+	
+OnSetBG:
+	mes "BG TICK: " + .Tick2Rotate;
+	mes "Clean quests?: " + (.cleanQuests? "yes":"no");
+	mes "Max USERS: " + .bgMax;
+	next;
+	switch(select("set tick:set clean:set users"))
+	{
+		case 1:
+			input(.@bgTicks, 1, 100);
+			if( .@bgTicks )
+				.Tick2Rotate = .@bgTicks;
+			break;
+		case 2:
+			input(.@clean, 1, 2);
+			.cleanQuests = (.@clean == 1? true:false);
+			break;
+		case 3:
+			input(.@users, 1, 100);
+			if( .@users )
+				.bgMax = .@users;
+			break;
+	}
+	close;
+}

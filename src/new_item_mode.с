@@ -1,0 +1,509 @@
+﻿//==========================
+// идем в ../src/map/itemdb.h
+// ищем enum item_itemid {
+// в конце добавляем:
+
+	// Kubix special items:
+	ITEMID_COBWEB				 = 1025,
+	//WoE Items:
+	ITEMID_WOESLIMPOT			 = 25000,
+	ITEMID_WOEBLUEPOT			 = 25001,
+	ITEMID_WOEWHITEPOT			 = 25002,
+	ITEMID_WOESPEEDPOT			 = 25003,
+	ITEMID_WOEBOXGLOOM			 = 25004,
+	ITEMID_WOEBOXRESENTMENT		 = 25005,
+	ITEMID_WOEBOXDROWSINESS		 = 25006,
+	ITEMID_WOEFIREPROOF			 = 25007,
+	ITEMID_WOECOLDPROOF			 = 25008,
+	ITEMID_WOEEARTHPROOF		 = 25009,
+	ITEMID_WOETHUNDERPROOF		 = 25010,
+	ITEMID_WOESUNLIGHTBOX		 = 25011,
+	ITEMID_WOESTRFOOD			 = 25012,
+	ITEMID_WOEAGIFOOD			 = 25013,
+	ITEMID_WOEVITFOOD			 = 25014,
+	ITEMID_WOEINTFOOD			 = 25015,
+	ITEMID_WOEDEXFOOD			 = 25016,
+	ITEMID_WOELUKFOOD			 = 25017,
+	ITEMID_WOEABRASIVE			 = 25018,
+	ITEMID_WOE_FIRE_BOTTLE		 = 25019,
+	ITEMID_WOE_ACID_BOTTLE		 = 25020,
+	ITEMID_WOEEDP				 = 25021,
+	ITEMID_WOECOBWEB			 = 25022,
+	ITEMID_WOEGLISTENING		 = 25023,
+	ITEMID_WOEPLANTBOTTLE		 = 25024,
+	ITEMID_WOECRYSTALFRAGMENT	 = 25025,
+	ITEMID_WOEBLUEGEMSTONE		 = 25026,
+	ITEMID_WOEYELLOWGEMSTONE	 = 25028,
+	ITEMID_WOEREDGEMSTONE		 = 25027,
+	
+	//BG Items:
+	ITEMID_BGSLIMPOT			 = 25100,
+	ITEMID_BGBLUEPOT			 = 25101,
+	ITEMID_BGWHITEPOT			 = 25102,
+	ITEMID_BGSPEEDPOT			 = 25103,
+	ITEMID_BGBOXGLOOM			 = 25104,
+	ITEMID_BGBOXRESENTMENT		 = 25105,
+	ITEMID_BGBOXDROWSINESS		 = 25106,
+	ITEMID_BGFIREPROOF			 = 25107,
+	ITEMID_BGCOLDPROOF			 = 25108,
+	ITEMID_BGEARTHPROOF			 = 25109,
+	ITEMID_BGTHUNDERPROOF		 = 25110,
+	ITEMID_BGSUNLIGHTBOX		 = 25111,
+	ITEMID_BGSTRFOOD			 = 25112,
+	ITEMID_BGAGIFOOD			 = 25113,
+	ITEMID_BGVITFOOD			 = 25114,
+	ITEMID_BGINTFOOD			 = 25115,
+	ITEMID_BGDEXFOOD			 = 25116,
+	ITEMID_BGLUKFOOD			 = 25117,
+	ITEMID_BGABRASIVE			 = 25118,
+	ITEMID_BG_FIRE_BOTTLE		 = 25119,
+	ITEMID_BG_ACID_BOTTLE		 = 25120,
+	ITEMID_BGEDP				 = 25121,
+	ITEMID_BGCOBWEB				 = 25122,
+	ITEMID_BGGLISTENING			 = 25123,
+	ITEMID_BGPLANTBOTTLE		 = 25124,
+	ITEMID_BGCRYSTALFRAGMENT	 = 25125,
+	ITEMID_BGBLUEGEMSTONE		 = 25126,
+	ITEMID_BGYELLOWGEMSTONE		 = 25128,
+	ITEMID_BGREDGEMSTONE		 = 25127,
+	
+	
+	
+// ==============================
+// идем в ../src/map/pc.c
+// ищем структуру pc_isUseitem
+// после switch( nameid ) { // TODO: Is there no better way to handle this, other than hardcoding item IDs?
+// добавляем:
+
+		case ITEMID_WOESLIMPOT:
+		case ITEMID_WOEBLUEPOT:
+		case ITEMID_WOEWHITEPOT:
+		case ITEMID_WOESPEEDPOT:
+		case ITEMID_WOEBOXGLOOM:
+		case ITEMID_WOEBOXRESENTMENT:
+		case ITEMID_WOEBOXDROWSINESS:
+		case ITEMID_WOEFIREPROOF:
+		case ITEMID_WOECOLDPROOF:
+		case ITEMID_WOEEARTHPROOF:
+		case ITEMID_WOETHUNDERPROOF:
+		case ITEMID_WOESUNLIGHTBOX:
+		case ITEMID_WOESTRFOOD:
+		case ITEMID_WOEAGIFOOD:
+		case ITEMID_WOEVITFOOD:
+		case ITEMID_WOEINTFOOD:
+		case ITEMID_WOEDEXFOOD:
+		case ITEMID_WOELUKFOOD:
+		case ITEMID_WOEABRASIVE:
+		case ITEMID_WOEEDP:
+			if( !map->list[sd->bl.m].flag.gvg)
+				return 0;
+			break;
+		case ITEMID_BGSLIMPOT:
+		case ITEMID_BGBLUEPOT:
+		case ITEMID_BGWHITEPOT:
+		case ITEMID_BGSPEEDPOT:
+		case ITEMID_BGBOXGLOOM:
+		case ITEMID_BGBOXRESENTMENT:
+		case ITEMID_BGBOXDROWSINESS:
+		case ITEMID_BGFIREPROOF:
+		case ITEMID_BGCOLDPROOF:
+		case ITEMID_BGEARTHPROOF:
+		case ITEMID_BGTHUNDERPROOF:
+		case ITEMID_BGSUNLIGHTBOX:
+		case ITEMID_BGABRASIVE:
+		case ITEMID_BGEDP:		
+		case ITEMID_BGSTRFOOD:
+		case ITEMID_BGAGIFOOD:
+		case ITEMID_BGVITFOOD:
+		case ITEMID_BGINTFOOD:
+		case ITEMID_BGDEXFOOD:
+		case ITEMID_BGLUKFOOD:
+			if( !map->list[sd->bl.m].flag.battleground)
+				return 0;
+			break;
+
+// ==================================
+// идем в ../src/map/skill.c
+// ищем структуру skill_condition skill_get_requirement	
+// меняем проверку:
+		if (itemid_isgemstone(req.itemid[i]) && skill_id != HW_GANBANTEIN) {
+			if (sd->special_state.no_gemstone) {
+				// All gem skills except Hocus Pocus and Ganbantein can cast for free with Mistress card [helvetica]
+				if( skill_id != SA_ABRACADABRA )
+					req.itemid[i] = req.amount[i] = 0;
+				else if( --req.amount[i] < 1 )
+					req.amount[i] = 1; // Hocus Pocus always use at least 1 gem
+			}
+			if(sc && sc->data[SC_INTOABYSS])
+			{
+				if( skill_id != SA_ABRACADABRA )
+					req.itemid[i] = req.amount[i] = 0;
+				else if( --req.amount[i] < 1 )
+					req.amount[i] = 1; // Hocus Pocus always use at least 1 gem
+			}
+			
+			if (sc && sc->data[SC_MVPCARD_MISTRESS]) {
+				req.itemid[i] = req.amount[i] = 0;
+			}
+		}
+			
+// ================= На:
+		if (itemid_isgemstone(req.itemid[i]) && skill_id != HW_GANBANTEIN) {
+			if (sd->special_state.no_gemstone) {
+				// All gem skills except Hocus Pocus and Ganbantein can cast for free with Mistress card [helvetica]
+				if( skill_id != SA_ABRACADABRA )
+					req.itemid[i] = req.amount[i] = 0;
+				else if( --req.amount[i] < 1 )
+					req.amount[i] = 1; // Hocus Pocus always use at least 1 gem
+			}
+			if(sc && sc->data[SC_INTOABYSS])
+			{
+				if( skill_id != SA_ABRACADABRA )
+					req.itemid[i] = req.amount[i] = 0;
+				else if( --req.amount[i] < 1 )
+					req.amount[i] = 1; // Hocus Pocus always use at least 1 gem
+			}
+			if (sc && sc->data[SC_MVPCARD_MISTRESS]) {
+				req.itemid[i] = req.amount[i] = 0;
+			}
+			
+			// =========BY KUBIX
+			if( skill_id != SA_ABRACADABRA )
+			{
+				if (req.itemid[i] == ITEMID_BLUE_GEMSTONE)
+				{
+					if (map->list[sd->bl.m].flag.gvg)
+					{
+						int index = pc->search_inventory(sd, ITEMID_WOEBLUEGEMSTONE);
+
+						if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+						{
+							req.itemid[i] = ITEMID_WOEBLUEGEMSTONE;
+						}
+					}
+					else if (map->list[sd->bl.m].flag.battleground)
+					{
+						int index = pc->search_inventory(sd, ITEMID_BGBLUEGEMSTONE);
+
+						if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+						{
+							req.itemid[i] = ITEMID_BGBLUEGEMSTONE;
+						}
+					}
+				}
+				else if (req.itemid[i] == ITEMID_RED_GEMSTONE)
+				{
+					if (map->list[sd->bl.m].flag.gvg)
+					{
+						int index = pc->search_inventory(sd, ITEMID_WOEREDGEMSTONE);
+
+						if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+						{
+							req.itemid[i] = ITEMID_WOEREDGEMSTONE;
+						}
+					}
+					else if (map->list[sd->bl.m].flag.battleground)
+					{
+						int index = pc->search_inventory(sd, ITEMID_BGREDGEMSTONE);
+
+						if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+						{
+							req.itemid[i] = ITEMID_BGREDGEMSTONE;
+						}
+					}
+				}
+				else if (req.itemid[i] == ITEMID_YELLOW_GEMSTONE)
+				{
+					if (map->list[sd->bl.m].flag.gvg)
+					{
+						int index = pc->search_inventory(sd, ITEMID_WOEYELLOWGEMSTONE);
+
+						if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+						{
+							req.itemid[i] = ITEMID_WOEYELLOWGEMSTONE;
+						}
+					}
+					else if (map->list[sd->bl.m].flag.battleground)
+					{
+						int index = pc->search_inventory(sd, ITEMID_BGYELLOWGEMSTONE);
+
+						if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+						{
+							req.itemid[i] = ITEMID_BGYELLOWGEMSTONE;
+						}
+					}
+				}
+			}
+			// =========BY KUBIX
+		}		
+
+
+// =========== крутим ниже, и после:
+
+		if( skill_id >= HT_SKIDTRAP && skill_id <= HT_TALKIEBOX && pc->checkskill(sd, RA_RESEARCHTRAP) > 0){
+			int16 item_index;
+			if ((item_index = pc->search_inventory(sd,req.itemid[i])) == INDEX_NOT_FOUND
+			  || sd->status.inventory[item_index].amount < req.amount[i]
+			) {
+				req.itemid[i] = ITEMID_TRAP_ALLOY;
+				req.amount[i] = 1;
+			}
+			break;
+		}		
+		
+// ======= добавляем:
+
+		// Special BG & WoE items by Kubix
+		if (req.itemid[i] == ITEMID_ACID_BOTTLE)
+		{
+			if (map->list[sd->bl.m].flag.gvg)
+			{
+				int index = pc->search_inventory(sd, ITEMID_WOE_ACID_BOTTLE);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_WOE_ACID_BOTTLE;
+				}
+			}
+			else if (map->list[sd->bl.m].flag.battleground)
+			{
+				int index = pc->search_inventory(sd, ITEMID_BG_ACID_BOTTLE);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_BG_ACID_BOTTLE;
+				}
+			}
+		}
+		else if (req.itemid[i] == ITEMID_FIRE_BOTTLE)
+		{
+			if (map->list[sd->bl.m].flag.gvg)
+			{
+				int index = pc->search_inventory(sd, ITEMID_WOE_FIRE_BOTTLE);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_WOE_FIRE_BOTTLE;
+				}
+			}
+			else if (map->list[sd->bl.m].flag.battleground)
+			{
+				int index = pc->search_inventory(sd, ITEMID_BG_FIRE_BOTTLE);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_BG_FIRE_BOTTLE;
+				}
+			}
+		}
+		
+		if(req.itemid[i] == ITEMID_POISON_BOTTLE) // EDP
+		{
+			if (map->list[sd->bl.m].flag.gvg)
+			{
+				int index = pc->search_inventory(sd, ITEMID_WOEEDP);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_WOEEDP;
+				}
+			}
+			else if (map->list[sd->bl.m].flag.battleground)
+			{
+				int index = pc->search_inventory(sd, ITEMID_BGEDP);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_BGEDP;
+				}
+			}
+		}
+		
+		if(req.itemid[i] == ITEMID_COBWEB) // Cobweb
+		{
+			if (map->list[sd->bl.m].flag.gvg)
+			{
+				int index = pc->search_inventory(sd, ITEMID_WOECOBWEB);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_WOECOBWEB;
+				}
+			}
+			else if (map->list[sd->bl.m].flag.battleground)
+			{
+				int index = pc->search_inventory(sd, ITEMID_BGCOBWEB);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_BGCOBWEB;
+				}
+			}			
+		}
+		
+		if(req.itemid[i] == ITEMID_COATING_BOTTLE) // Creator's
+		{
+			if (map->list[sd->bl.m].flag.gvg)
+			{
+				int index = pc->search_inventory(sd, ITEMID_WOEGLISTENING);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_WOEGLISTENING;
+				}
+			}
+			else if (map->list[sd->bl.m].flag.battleground)
+			{
+				int index = pc->search_inventory(sd, ITEMID_BGGLISTENING);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_BGGLISTENING;
+				}
+			}			
+		}
+		
+		if(req.itemid[i] == ITEMID_MENEATER_PLANT_BOTTLE)
+		{
+			if (map->list[sd->bl.m].flag.gvg)
+			{
+				int index = pc->search_inventory(sd, ITEMID_WOEPLANTBOTTLE);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_WOEPLANTBOTTLE;
+				}
+			}
+			else if (map->list[sd->bl.m].flag.battleground)
+			{
+				int index = pc->search_inventory(sd, ITEMID_BGPLANTBOTTLE);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_BGPLANTBOTTLE;
+				}
+			}		
+		}
+			
+		if(req.itemid[i] == ITEMID_WHITE_SLIM_POTION)
+		{
+			if (map->list[sd->bl.m].flag.gvg)
+			{
+				int index = pc->search_inventory(sd, ITEMID_WOESLIMPOT);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_WOESLIMPOT;
+				}
+			}
+			else if (map->list[sd->bl.m].flag.battleground)
+			{
+				int index = pc->search_inventory(sd, ITEMID_BGSLIMPOT);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_BGSLIMPOT;
+				}
+			}			
+		}
+
+		if(req.itemid[i] == ITEMID_WHITE_POTION)
+		{
+			if (map->list[sd->bl.m].flag.gvg)
+			{
+				int index = pc->search_inventory(sd, ITEMID_WOEWHITEPOT);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_WOEWHITEPOT;
+				}
+			}
+			else if (map->list[sd->bl.m].flag.battleground)
+			{
+				int index = pc->search_inventory(sd, ITEMID_BGWHITEPOT);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_BGWHITEPOT;
+				}
+			}			
+		}
+		
+		if(req.itemid[i] == ITEMID_BLUE_POTION)
+		{
+			if (map->list[sd->bl.m].flag.gvg)
+			{
+				int index = pc->search_inventory(sd, ITEMID_WOEBLUEPOT);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_WOEBLUEPOT;
+				}
+			}
+			else if (map->list[sd->bl.m].flag.battleground)
+			{
+				int index = pc->search_inventory(sd, ITEMID_BGBLUEPOT);
+
+				if (index != INDEX_NOT_FOUND && sd->status.inventory[index].amount >= req.amount[i])
+				{
+					req.itemid[i] = ITEMID_BGBLUEPOT;
+				}
+			}			
+		}
+		// Special BG & WoE items by Kubix
+		
+		
+		
+		
+// ========= Летим выше, строка 2254~ (//Spirit of Wizard blocks Kaite's reflection)
+// ========= меняем проверку if(reflecttype == 2 ....) на:
+
+			//Spirit of Wizard blocks Kaite's reflection
+			if (reflecttype == 2 && sc && sc->data[SC_SOULLINK] && sc->data[SC_SOULLINK]->val2 == SL_WIZARD) {
+				//Consume one Fragment per hit of the casted skill? [Skotlex+Kubix]
+				if (map->list[sd->bl.m].flag.gvg)
+				{
+					int consumeitem = tsd ? pc->search_inventory(tsd, ITEMID_WOECRYSTALFRAGMENT) : 0;
+					if (consumeitem != INDEX_NOT_FOUND)
+					{
+						if ( tsd ) pc->delitem(tsd, consumeitem, 1, 0, DELITEM_SKILLUSE, LOG_TYPE_CONSUME);
+						dmg.damage = dmg.damage2 = 0;
+						dmg.dmg_lv = ATK_MISS;
+						sc->data[SC_SOULLINK]->val3 = skill_id;
+						sc->data[SC_SOULLINK]->val4 = dsrc->id;
+					}
+				}
+				else if (map->list[sd->bl.m].flag.battleground)
+				{
+					int consumeitem = tsd ? pc->search_inventory(tsd, ITEMID_BGCRYSTALFRAGMENT) : 0;
+					if (consumeitem != INDEX_NOT_FOUND)
+					{
+						if ( tsd ) pc->delitem(tsd, consumeitem, 1, 0, DELITEM_SKILLUSE, LOG_TYPE_CONSUME);
+						dmg.damage = dmg.damage2 = 0;
+						dmg.dmg_lv = ATK_MISS;
+						sc->data[SC_SOULLINK]->val3 = skill_id;
+						sc->data[SC_SOULLINK]->val4 = dsrc->id;
+					}
+				}
+				else 
+				{
+					int consumeitem = tsd ? pc->search_inventory(tsd, ITEMID_FRAGMENT_OF_CRYSTAL) : 0;
+					if (consumeitem != INDEX_NOT_FOUND)
+					{
+						if ( tsd ) pc->delitem(tsd, consumeitem, 1, 0, DELITEM_SKILLUSE, LOG_TYPE_CONSUME);
+						dmg.damage = dmg.damage2 = 0;
+						dmg.dmg_lv = ATK_MISS;
+						sc->data[SC_SOULLINK]->val3 = skill_id;
+						sc->data[SC_SOULLINK]->val4 = dsrc->id;
+					}
+				}
+			} else if( reflecttype != 2 ) /* Kaite bypasses */
+				additional_effects = false;
+
+				
+// ==== Идем ниже, ищем скилл AM_POTIONPITCHER
+// Меняем код скилла на код, указаный в файле AM_POTIONPITCHER.c!
+
+
+
+// ==== Ищем скилл CR_SLIMPITCHER и заменяем его код на код указаный в CR_SLIMPITCHER.c!

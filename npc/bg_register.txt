@@ -1,0 +1,353 @@
+function	script	cleanBgQuests	{
+	for(.@i = 8500; .@i < 8511; .@i ++)
+		if( (.@i != 8506 && questprogress(.@i, PLAYTIME) ) )
+			erasequest .@i;
+	return;
+}
+
+-	script	Battle_Register	FAKE_NPC,{
+	end;
+	
+OnJoinBG:
+	mes "^D2691E[Battle Requiter]^000000";
+	mes "Welcome to the Battleground register service.";
+	next;
+	if( select( "Register:Close" ) == 2) close;
+	
+	if( questprogress(8506, PLAYTIME) )
+		erasequest 8506;
+	else if( questprogress(8506, PLAYTIME) == 1 )
+	{
+		mes "^D2691E[Battle Requiter]^000000";
+		mes "You are a Deserter. You can't participate until the indicator goes off";
+		close;
+	}
+	
+	if( getcharid(4) )
+	{
+		mes "^D2691E[Battle Requiter]^000000";
+		mes "You already in Battle Group.";
+		close;
+	}
+	
+	.@qid1 = queueiterator( $@Croix_Duplicate );
+	.@qid2 = queueiterator( $@Guill_Duplicate );
+	
+	for( .@i = 0; .@i < .BG_Max[ .Index ]; .@i ++ )
+	{
+		if( qiget(.@qid1) == ( .MultipleCheck == 1? get_unique_id():getcharip() ) || qiget(.@qid2) == ( .MultipleCheck == 1? get_unique_id():getcharip() ) )
+		{
+			mes "^D2691E[Battle Requiter]^000000";
+			mes "You already in queue.";
+			close;
+		}
+	}
+	
+	cleanBgQuests();
+	
+	switch( .Battle_State )
+	{
+		default:
+		case 0:
+		case 2:
+			mes "^D2691E[Battle Requiter]^000000";
+			mes "Queue not available. Try again later or contact your administrator.";
+			close;
+			
+		case 1: // idle
+			
+			if( getarraysize( $@Croix_QID ) < .BG_Max[ .Index ] || getarraysize( $@Guill_QID ) < .BG_Max[ .Index ] )
+			{
+				if( getarraysize( $@Croix_QID ) > getarraysize( $@Guill_QID ) )
+				{
+					
+					if( !queueadd( $@Guill_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					{
+						mes "^D2691E[Battle Requiter]^000000";
+						mes "You already in queue";
+						close;
+					}
+					$@Guill_QID[ $@Guill ] = getcharid(3);
+					$@Guill ++;
+					if( .debug )
+						debugmes strcharinfo(0) + " guillame";
+				}
+				else if( getarraysize( $@Croix_QID ) < getarraysize( $@Guill_QID ) )
+				{
+					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					{
+						mes "^D2691E[Battle Requiter]^000000";
+						mes "You already in queue";
+						close;
+					}
+					
+					$@Croix_QID[ $@Croix ] = getcharid(3);
+					$@Croix ++;
+					if( .debug )
+						debugmes strcharinfo(0) + " croix";
+				}
+				else
+				{
+					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					{
+						mes "^D2691E[Battle Requiter]^000000";
+						mes "You already in queue";
+						close;
+					}	
+					$@Croix_QID[ $@Croix ] = getcharid(3);
+					$@Croix ++;					
+					if( .debug )
+						debugmes strcharinfo(0) + " croix";
+				}
+				
+				mes "^D2691E[Battle Requiter]^000000";
+				mes "Added to queue.";
+				close;
+			}
+			
+			mes "^D2691E[Battle Requiter]^000000";
+			mes "Queue is full";
+			close;
+			
+			
+		case 3: // Beginning, other can join.
+			
+			if( getarraysize( $@Croix_QID ) < .BG_Max[ .Index ] || getarraysize( $@Guill_QID ) < .BG_Max[ .Index ] )
+			{
+				if( getarraysize( $@Croix_QID ) > getarraysize( $@Guill_QID ) )
+				{
+					if( !queueadd( $@Guill_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					{
+						mes "^D2691E[Battle Requiter]^000000";
+						mes "You already in queue";
+						close;
+					}
+					$@Guill_QID[ $@Guill ] = getcharid(3);
+					$@Guill ++;
+					if( .BG_Names$[ .Index] == "Conquest" )
+						if( $@Guill_BG == getvariableofnpc( .Atacker, "Conquest" ) )
+							bg_single( $@Guill_BG, .BG_Map$[ .Index ], .BG_AtackerX, .BG_AtackerY );
+						else bg_single( $@Guill_BG, .BG_Map$[ .Index ], .BG_DefenerX, .BG_DefenerY );
+					else
+						bg_single( $@Guill_BG, .BG_Map$[ .Index ], .BG_GuillX[ .Index ], .BG_GuillY[ .Index ] );
+					
+					if( .debug )
+						debugmes strcharinfo(0) + " guillame";
+				}
+				else if( getarraysize( $@Croix_QID ) < getarraysize( $@Guill_QID ) )
+				{
+					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					{
+						mes "^D2691E[Battle Requiter]^000000";
+						mes "You already in queue";
+						close;
+					}
+					$@Croix_QID[ $@Croix ] = getcharid(3);
+					$@Croix ++;					
+					if( .BG_Names$[ .Index] == "Conquest" )
+						if( $@Croix_BG == getvariableofnpc( .Atacker, "Conquest" ) )
+							bg_single( $@Croix_BG, .BG_Map$[ .Index ], .BG_AtackerX, .BG_AtackerY );
+						else bg_single( $@Croix_BG, .BG_Map$[ .Index ], .BG_DefenerX, .BG_DefenerY );
+					else
+						bg_single( $@Croix_BG, .BG_Map$[ .Index ], .BG_CroixX[ .Index ], .BG_CroixY[ .Index ] );
+					
+					if( .debug )
+						debugmes strcharinfo(0) + " croix";
+				}
+				else
+				{
+
+					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					{
+						mes "^D2691E[Battle Requiter]^000000";
+						mes "You already in queue";
+						close;
+					}
+					$@Croix_QID[ $@Croix ] = getcharid(3);
+					$@Croix ++;					
+					if( .BG_Names$[ .Index] == "Conquest" )
+						if( $@Croix_BG == getvariableofnpc( .Atacker, "Conquest" ) )
+							bg_single( $@Croix_BG, .BG_Map$[ .Index ], .BG_AtackerX, .BG_AtackerY );
+						else bg_single( $@Croix_BG, .BG_Map$[ .Index ], .BG_DefenerX, .BG_DefenerY );
+					else
+						bg_single( $@Croix_BG, .BG_Map$[ .Index ], .BG_CroixX[ .Index ], .BG_CroixY[ .Index ] );
+					
+					if( .debug )
+						debugmes strcharinfo(0) + " croix";
+				}
+				
+				mes "^D2691E[Battle Requiter]^000000";
+				mes "Added to queue.";
+				close;
+			}
+			
+			mes "^D2691E[Battle Requiter]^000000";
+			mes "Queue is full";
+			close;			
+	}
+		
+OnInit:
+	// ===== Multiple Windows checking by ?
+	// = 1 - Gepard Shield
+	// = 2 - IP
+	.MultipleCheck = 1;
+	
+	// ===== BG Colors
+	setarray .BG_Color$[0], "0xDDA0DD", "0x7CCD7C", "0xFFA500";
+	
+	// ===== BG NPC & Arena Names
+	setarray .BG_Names$[0], "Rush", "Flavius TD", "Conquest";
+	setarray .BG_Arena$[0], "Rush", "Flavius_TD", "Conquest";
+	
+	// ===== BG Player Amount
+	setarray .BG_Min[0], 2, 2, 2;
+	setarray .BG_Max[0], 30, 30, 30;
+	
+	// ===== BG Locations
+	setarray .BG_Map$[0], "rush_cas04", "bat_b03", "schg_cas06";
+	
+	// ===== BG X/Y Coordinates
+	setarray .BG_GuillX[0], 270, 390, 264;
+	setarray .BG_GuillY[0], 292, 10, 379;
+	setarray .BG_CroixX[0], 270, 10, 295;
+	setarray .BG_CroixY[0], 288, 290, 379;
+	
+	bindatcmd "joinbg", strnpcinfo(0) + "::OnJoinBG", 0, 99;
+	bindatcmd "leavebg", strnpcinfo(0) + "::OnLeaveBG", 0, 99;
+	// ===== Time to flood in seconds.
+	.Flood_Time = 180;
+	// ===== Enable debug mode?
+	.debug = false;
+	
+	$@RegNPC$ = strnpcinfo(0) + "::OnBGRotate";
+	
+OnBGRotate:
+
+	if( ( .Index += 1 ) > ( getarraysize( .BG_Names$ ) - 1 ) )
+		.Index = 0;
+	
+	if( $@Croix_Duplicate ) queuedel $@Croix_Duplicate;
+	if( $@Guill_Duplicate ) queuedel $@Guill_Duplicate;
+	
+	if( $@Guill_BG ) bg_destroy $@Guill_BG;
+	if( $@Croix_BG ) bg_destroy $@Croix_BG;
+	
+	// ===== Queue with Gepard ID
+	$@Croix_Duplicate = queue();
+	$@Guill_Duplicate = queue();
+	
+	deletearray $@Croix_QID[0], getarraysize( $@Croix_QID );
+	deletearray $@Guill_QID[0], getarraysize( $@Guill_QID );
+	.Leavers = 0;
+	.Battle_State = 1;
+	.BG_Tick = 0;
+	.Player2Start = ( .BG_Min[ .Index ] * 2 ) - ( queuesize( $@Croix_Duplicate ) + queuesize( $@Guill_Duplicate ) ) ;
+	announce "Battleground -- " + .BG_Names$[ .Index ] + " -- (" + .Player2Start + ") more players to start.", bc_all, .BG_Color$[ .Index ];
+	initnpctimer;
+	end;
+	
+OnTimer30000:
+	.Player2Start = ( .BG_Min[ .Index ] * 2 ) - ( queuesize( $@Croix_Duplicate ) + queuesize( $@Guill_Duplicate ) ) ;
+	if( .Player2Start <= 0 )
+	{
+		
+		if( .BG_Names$[ .Index] == "Conquest" )
+		{
+			donpcevent "Conquest::OnSetRotation";
+			.BG_Map$[ .Index ] 	 = getvariableofnpc( .Castle$, "Conquest" );
+			.BG_GuillX[ .Index ] = getvariableofnpc( .GX, "Conquest" );
+			.BG_GuillY[ .Index ] = getvariableofnpc( .GY, "Conquest" );
+			.BG_CroixX[ .Index ] = getvariableofnpc( .CX, "Conquest" );
+			.BG_CroixY[ .Index ] = getvariableofnpc( .CY, "Conquest" );
+			.BG_DefenerX		 = getvariableofnpc( .DX, "Conquest" );
+			.BG_DefenerY		 = getvariableofnpc( .DY, "Conquest" );
+			.BG_AtackerX		 = getvariableofnpc( .AX, "Conquest" );
+			.BG_AtackerY		 = getvariableofnpc( .AY, "Conquest" );
+		}
+		
+		$@Guill_BG = bg_create_team( .BG_Map$[ .Index ], .BG_GuillX[ .Index ], .BG_GuillY[ .Index ], .BG_Arena$[ .Index ] + "::OnGuillameQuit", .BG_Arena$[ .Index ]  + "::OnGuillameDie" );
+		$@Croix_BG = bg_create_team( .BG_Map$[ .Index ], .BG_CroixX[ .Index ], .BG_CroixY[ .Index ], .BG_Arena$[ .Index ] + "::OnCroixQuit", .BG_Arena$[ .Index ]  + "::OnCroixDie");
+
+		.Battle_State = 2;
+		
+		freeloop(1);
+		for( .c = 0; .c < getarraysize( $@Croix_QID ); .c ++ )
+		{
+			if( !isloggedin( $@Croix_QID[ .c ] ) )
+				.Leavers ++;
+			else bg_join_team( $@Croix_BG, $@Croix_QID[ .c ] );
+		}
+		
+		for( .g = 0; .g < getarraysize( $@Guill_QID ); .g ++ )
+		{
+			if( !isloggedin( $@Guill_QID[ .g ] ) )
+				.Leavers ++;
+			else bg_join_team( $@Guill_BG, $@Guill_QID[ .g ] );			
+		}
+		freeloop(0);
+		
+		announce "Battleground -- " + .BG_Names$[ .Index ] + " -- Beginning.", bc_all, .BG_Color$[ .Index ];
+		donpcevent .BG_Arena$[ .Index ] + "::OnStartBattleground";
+		.Battle_State = 3;
+		stopnpctimer;
+		end;
+	}
+	
+	if( .BG_Flood < gettimetick(2) )
+	{
+		.BG_Tick ++;
+		if( .BG_Tick >= 10 )
+		{
+			stopnpctimer;
+			donpcevent strnpcinfo(0) + "::OnBGRotate";
+			end;
+		}
+		announce "Battleground -- " + .BG_Names$[ .Index ] + " -- (" + .Player2Start + ") more players to start.", bc_all, .BG_Color$[ .Index ];
+		.BG_Flood = gettimetick(2) + .Flood_Time;
+	}
+	initnpctimer;
+	end;
+
+OnLeaveBG:
+	.@Q_IT1 = queueiterator( $@Croix_Duplicate );
+	.@Q_IT2 = queueiterator( $@Guill_Duplicate );
+	
+	if( qiget(.@Q_IT1) == ( .MultipleCheck == 1? get_unique_id():getcharip() ) )
+	{
+		queueremove( $@Croix_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) );
+		for( .@a = 0; .@a < getarraysize( $@Croix_QID ); .@a ++ )
+			if( $@Croix_QID[ .@a ] == getcharid(3) )
+				deletearray $@Croix_QID[ .@a ], 1;
+		
+		$@Croix --;
+	}
+	else if( qiget(.@Q_IT2) == ( .MultipleCheck == 1? get_unique_id():getcharip() ) )
+	{
+		queueremove( $@Guill_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) );
+			for( .@a = 0; .@a < getarraysize( $@Guill_QID ); .@a ++ )
+				if( $@Guill_QID[ .@a ] == getcharid(3) )
+					deletearray $@Guill_QID[ .@a ], 1;
+		$@Guill --;
+	}
+	else
+	{
+		message strcharinfo(0), "You are not in queue.";
+		end;
+	}
+	
+	if( getcharid(4) )
+	{
+		bg_leave();
+		warp "SavePoint", 0, 0;
+	}
+	end;
+}
+
+ironbridge,127,120,3	script	Battle Requiter#Main	4_EP16_SPIEGEL,{
+	doevent "Battle_Register::OnJoinBG";
+	end;
+}
+
+// ==== NPC Duplicates
+ironbridge,78,98,6	duplicate(Battle Requiter#Main)	Battle Requiter#A	4_EP16_SPIEGEL
+

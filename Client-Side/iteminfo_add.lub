@@ -1,0 +1,2092 @@
+﻿	[25000] = {
+		unidentifiedDisplayName = "WoE Condensed White Potion",
+		unidentifiedResourceName = "화이트슬림포션",
+		unidentifiedDescriptionName = {
+			"A condensed white potion that weighs significantly less.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777775^000000"
+		},
+		identifiedDisplayName = "WoE Condensed White Potion",
+		identifiedResourceName = "화이트슬림포션",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A condensed white potion that weighs significantly less.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777772^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25001] = {
+		unidentifiedDisplayName = "WoE Blue Potion",
+		unidentifiedResourceName = "파란포션",
+		unidentifiedDescriptionName = {
+			"A potion made from grinded Blue Herbs that restores about ^00008860 SP^000000.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777715^000000"
+		},
+		identifiedDisplayName = "WoE Blue Potion",
+		identifiedResourceName = "파란포션",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A potion made from grinded Blue Herbs that restores about ^00008860 SP^000000.",
+			"^FFFFFF_^000000",
+			"ID: ^777777 505 ^000000",
+			"Weight: ^77777715^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},	
+	[25002] = {
+		unidentifiedDisplayName = "WoE White Potion",
+		unidentifiedResourceName = "하얀포션",
+		unidentifiedDescriptionName = {
+			"A potion made from grinded White Herbs that restores about ^000088325 HP^000000.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777715^000000"
+		},
+		identifiedDisplayName = "WoE White Potion",
+		identifiedResourceName = "하얀포션",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A potion made from grinded White Herbs that restores about ^000088325 HP^000000.",
+			"^FFFFFF_^000000",
+			"ID: ^777777 504 ^000000",
+			"Weight: ^77777715^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25003] = {
+		unidentifiedDisplayName = "WoE Speed Potion",
+		unidentifiedResourceName = "이속증가포션",
+		unidentifiedDescriptionName = {
+			"A potion which increases the moving speed of a character for a set duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777710^000000"
+		},
+		identifiedDisplayName = "WoE Speed Potion",
+		identifiedResourceName = "이속증가포션",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A potion which increases the moving speed of a character for a set duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777710^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25004] = {
+		unidentifiedDisplayName = "WoE Box of Gloom",
+		unidentifiedResourceName = "우울한상자",
+		unidentifiedDescriptionName = {
+			"Automatically casts",
+			"Level 1 Improve",
+			"Concentration",
+			"on the user.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		identifiedDisplayName = "WoE Box of Gloom",
+		identifiedResourceName = "우울한상자",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"Automatically casts",
+			"Level 1 Improve",
+			"Concentration",
+			"on the user.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25005] = {
+		unidentifiedDisplayName = "WoE Box of Resentment",
+		unidentifiedResourceName = "원한의상자",
+		unidentifiedDescriptionName = {
+			"Adds +20 ATK",
+			"for 60 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		identifiedDisplayName = "WoE Box of Resentment",
+		identifiedResourceName = "원한의상자",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"Adds +20 ATK",
+			"for 60 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25006] = {
+		unidentifiedDisplayName = "WoE Box of Drowsiness",
+		unidentifiedResourceName = "졸린상자",
+		unidentifiedDescriptionName = {
+			"Adds +20 MATK",
+			"for 60 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		identifiedDisplayName = "WoE Box of Drowsiness",
+		identifiedResourceName = "졸린상자",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"Adds +20 MATK",
+			"for 60 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},	
+	
+	[25007] = {
+		unidentifiedDisplayName = "WoE Fireproof Potion",
+		unidentifiedResourceName = "레지스트_화",
+		unidentifiedDescriptionName = {
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^FF0000Fire^000000 property at the cost of increasing",
+			"damage from the ^0000BBWater^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Fireproof Potion",
+		identifiedResourceName = "레지스트_화",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^FF0000Fire^000000 property at the cost of increasing",
+			"damage from the ^0000BBWater^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25008] = {
+		unidentifiedDisplayName = "WoE Coldproof Potion",
+		unidentifiedResourceName = "레지스트_수",
+		unidentifiedDescriptionName = {
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^0000BBWater^000000 property at the cost of increasing",
+			"damage from the ^7BCC70Wind^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Coldproof Potion",
+		identifiedResourceName = "레지스트_수",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^0000BBWater^000000 property at the cost of increasing",
+			"damage from the ^7BCC70Wind^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25009] = {
+		unidentifiedDisplayName = "WoE Earthproof Potion",
+		unidentifiedResourceName = "레지스트_지",
+		unidentifiedDescriptionName = {
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^cc5500Earth^000000 property at the cost of increasing",
+			"damage from the ^FF0000Fire^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Earthproof Potion",
+		identifiedResourceName = "레지스트_지",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^cc5500Earth^000000 property at the cost of increasing",
+			"damage from the ^FF0000Fire^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25010] = {
+		unidentifiedDisplayName = "WoE Thunderproof Potion",
+		unidentifiedResourceName = "레지스트_풍",
+		unidentifiedDescriptionName = {
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^7BCC70Wind^000000 property at the cost of increasing",
+			"damage from the ^cc5500Earth^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Thunderproof Potion",
+		identifiedResourceName = "레지스트_풍",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^7BCC70Wind^000000 property at the cost of increasing",
+			"damage from the ^cc5500Earth^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25011] = {
+		unidentifiedDisplayName = "WoE Box of Sunlight",
+		unidentifiedResourceName = "햇빛의상자",
+		unidentifiedDescriptionName = {
+			"Enables the user to",
+			"to detect any hidden enemies for 30 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		identifiedDisplayName = "WoE Box of Sunlight",
+		identifiedResourceName = "햇빛의상자",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"Enables the user to",
+			"to detect any hidden enemies for 30 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25012] = {
+		unidentifiedDisplayName = "WoE Whole Roast",
+		unidentifiedResourceName = "힘요리07",
+		unidentifiedDescriptionName = {
+			"A great meal for",
+			"meat lovers, this",
+			"roast is spiced up",
+			"with a special sauce.",
+			"STR +7",
+			"Weight: ^777777100^000000"
+		},
+		identifiedDisplayName = "WoE Whole Roast",
+		identifiedResourceName = "힘요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A great meal for",
+			"meat lovers, this",
+			"roast is spiced up",
+			"with a special sauce.",
+			"STR +7",
+			"Weight: ^777777100^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25013] = {
+		unidentifiedDisplayName = "WoE Steamed Alligator with Vegetable",
+		unidentifiedResourceName = "어질요리07",
+		unidentifiedDescriptionName = {
+			"A special Umbala",
+			"dish made with",
+			"steamed alligator",
+			"meat wrapped in",
+			"vegetables.",
+			"AGI +7",
+			"Weight: ^77777780^000000"
+		},
+		identifiedDisplayName = "WoE Steamed Alligator with Vegetable",
+		identifiedResourceName = "어질요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A special Umbala",
+			"dish made with",
+			"steamed alligator",
+			"meat wrapped in",
+			"vegetables.",
+			"AGI +7",
+			"Weight: ^77777780^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25014] = {
+		unidentifiedDisplayName = "WoE Sumptuous Feast",
+		unidentifiedResourceName = "바탈요리07",
+		unidentifiedDescriptionName = {
+			"A magnificent feast",
+			"fit for gods that would make mortals cry",
+			"tears of joy. VIT +7",
+			"Weight: ^77777740^000000"
+		},
+		identifiedDisplayName = "WoE Sumptuous Feast",
+		identifiedResourceName = "바탈요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A magnificent feast",
+			"fit for gods that would make mortals cry",
+			"tears of joy. VIT +7",
+			"Weight: ^77777740^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25015] = {
+		unidentifiedDisplayName = "WoE Special Royal Jelly Herbal Tea",
+		unidentifiedResourceName = "인트요리07",
+		unidentifiedDescriptionName = {
+			"An herbal tea mixed",
+			"with royal jelly that",
+			"has a pungent scent,",
+			"but a refreshing flavor. INT +7",
+			"Weight: ^77777780^000000"
+		},
+		identifiedDisplayName = "WoE Special Royal Jelly Herbal Tea",
+		identifiedResourceName = "인트요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"An herbal tea mixed",
+			"with royal jelly that",
+			"has a pungent scent,",
+			"but a refreshing flavor. INT +7",
+			"Weight: ^77777780^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25016] = {
+		unidentifiedDisplayName = "WoE Soul Haunted Bread",
+		unidentifiedResourceName = "덱요리07",
+		unidentifiedDescriptionName = {
+			"A deliciously sweet",
+			"bread, haunted by",
+			"flavor. DEX +7",
+			"Weight: ^77777780^000000"
+		},
+		identifiedDisplayName = "WoE Soul Haunted Bread",
+		identifiedResourceName = "덱요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A deliciously sweet",
+			"bread, haunted by",
+			"flavor. DEX +7",
+			"Weight: ^77777780^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25017] = {
+		unidentifiedDisplayName = "WoE Assorted Shish Kebob",
+		unidentifiedResourceName = "럭요리07",
+		unidentifiedDescriptionName = {
+			"Marinated meat and",
+			"vegetables roasted",
+			"on a skewer. LUK +7",
+			"Weight: ^77777780^000000"
+		},
+		identifiedDisplayName = "WoE Assorted Shish Kebob",
+		identifiedResourceName = "럭요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"Marinated meat and",
+			"vegetables roasted",
+			"on a skewer. LUK +7",
+			"Weight: ^77777780^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},	
+	[25018] = {
+		unidentifiedDisplayName = "WoE Abrasive",
+		unidentifiedResourceName = "그린에일",
+		unidentifiedDescriptionName = {
+			"An abrasive that",
+			"adds sharpness to",
+			"a weapon. Increases",
+			"CRIT by 30",
+			"for 5 minutes.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Abrasive",
+		identifiedResourceName = "그린에일",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"An abrasive that",
+			"adds sharpness to",
+			"a weapon. Increases",
+			"CRIT by 30",
+			"for 5 minutes.",
+			"If you are incapacitated,",
+			"the item effect will disappear.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25019] = {
+		unidentifiedDisplayName = "WoE Bottle Grenade",
+		unidentifiedResourceName = "야자열매폭탄",
+		unidentifiedDescriptionName = {
+			"A bottle containing flammable liquid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Bottle Grenade",
+		identifiedResourceName = "야자열매폭탄",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A bottle containing flammable liquid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25020] = {
+		unidentifiedDisplayName = "WoE Acid Bottle",
+		unidentifiedResourceName = "사과폭탄",
+		unidentifiedDescriptionName = {
+			"A bottle holding highly corrosive acid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Acid Bottle",
+		identifiedResourceName = "사과폭탄",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A bottle holding highly corrosive acid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25021] = {
+		unidentifiedDisplayName = "WoE Poison Bottle",
+		unidentifiedResourceName = "데들리포이즌병",
+		unidentifiedDescriptionName = {
+			"A skeleton shaped bottle which contains deadly poison.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777710^000000"
+		},
+		identifiedDisplayName = "WoE Poison Bottle",
+		identifiedResourceName = "데들리포이즌병",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A skeleton shaped bottle which contains deadly poison.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777710^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},	
+	[25022] = {
+		unidentifiedDisplayName = "WoE Cobweb",
+		unidentifiedResourceName = "거미줄",
+		unidentifiedDescriptionName = {
+			"A sticky spider's web made of surprisingly strong threadlike fibers.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Cobweb",
+		identifiedResourceName = "거미줄",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A sticky spider's web made of surprisingly strong threadlike fibers.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25023] = {
+		unidentifiedDisplayName = "WoE Glistening Coat",
+		unidentifiedResourceName = "코팅약",
+		unidentifiedDescriptionName = {
+			"A bottle which contains shining liquid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Glistening Coat",
+		identifiedResourceName = "코팅약",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A bottle which contains shining liquid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25024] = {
+		unidentifiedDisplayName = "WoE Plant Bottle",
+		unidentifiedResourceName = "식인식물병",
+		unidentifiedDescriptionName = {
+			"A bottle containing a dormant Flora.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Plant Bottle",
+		identifiedResourceName = "식인식물병",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A bottle containing a dormant Flora.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25025] = {
+		unidentifiedDisplayName = "WoE Crystal Fragment",
+		unidentifiedResourceName = "수정조각",
+		unidentifiedDescriptionName = {
+			"A small piece of a pretty crystal that looks like it has a symbol of an eye in its center.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "WoE Crystal Fragment",
+		identifiedResourceName = "수정조각",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"A small piece of a pretty crystal that looks like it has a symbol of an eye in its center.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25026] = {
+		unidentifiedDisplayName = "WoE Blue Gemstone",
+		unidentifiedResourceName = "블루젬스톤",
+		unidentifiedDescriptionName = {
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		identifiedDisplayName = "WoE Blue Gemstone",
+		identifiedResourceName = "블루젬스톤",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25027] = {
+		unidentifiedDisplayName = "WoE Red Gemstone",
+		unidentifiedResourceName = "레드젬스톤",
+		unidentifiedDescriptionName = {
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		identifiedDisplayName = "WoE Red Gemstone",
+		identifiedResourceName = "레드젬스톤",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25028] = {
+		unidentifiedDisplayName = "WoE Yellow Gemstone",
+		unidentifiedResourceName = "옐로우젬스톤",
+		unidentifiedDescriptionName = {
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		identifiedDisplayName = "WoE Yellow Gemstone",
+		identifiedResourceName = "옐로우젬스톤",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during WoE]^000000",
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25100] = {
+		unidentifiedDisplayName = "BG Condensed White Potion",
+		unidentifiedResourceName = "화이트슬림포션",
+		unidentifiedDescriptionName = {
+			"A condensed white potion that weighs significantly less.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777775^000000"
+		},
+		identifiedDisplayName = "BG Condensed White Potion",
+		identifiedResourceName = "화이트슬림포션",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A condensed white potion that weighs significantly less.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777772^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25101] = {
+		unidentifiedDisplayName = "BG Blue Potion",
+		unidentifiedResourceName = "파란포션",
+		unidentifiedDescriptionName = {
+			"A potion made from grinded Blue Herbs that restores about ^00008860 SP^000000.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777715^000000"
+		},
+		identifiedDisplayName = "BG Blue Potion",
+		identifiedResourceName = "파란포션",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A potion made from grinded Blue Herbs that restores about ^00008860 SP^000000.",
+			"^FFFFFF_^000000",
+			"ID: ^777777 505 ^000000",
+			"Weight: ^77777715^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},	
+	[25102] = {
+		unidentifiedDisplayName = "BG White Potion",
+		unidentifiedResourceName = "하얀포션",
+		unidentifiedDescriptionName = {
+			"A potion made from grinded White Herbs that restores about ^000088325 HP^000000.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777715^000000"
+		},
+		identifiedDisplayName = "BG White Potion",
+		identifiedResourceName = "하얀포션",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A potion made from grinded White Herbs that restores about ^000088325 HP^000000.",
+			"^FFFFFF_^000000",
+			"ID: ^777777 504 ^000000",
+			"Weight: ^77777715^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25103] = {
+		unidentifiedDisplayName = "BG Speed Potion",
+		unidentifiedResourceName = "이속증가포션",
+		unidentifiedDescriptionName = {
+			"A potion which increases the moving speed of a character for a set duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777710^000000"
+		},
+		identifiedDisplayName = "BG Speed Potion",
+		identifiedResourceName = "이속증가포션",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A potion which increases the moving speed of a character for a set duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777710^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25104] = {
+		unidentifiedDisplayName = "BG Box of Gloom",
+		unidentifiedResourceName = "우울한상자",
+		unidentifiedDescriptionName = {
+			"Automatically casts",
+			"Level 1 Improve",
+			"Concentration",
+			"on the user.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		identifiedDisplayName = "BG Box of Gloom",
+		identifiedResourceName = "우울한상자",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"Automatically casts",
+			"Level 1 Improve",
+			"Concentration",
+			"on the user.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25105] = {
+		unidentifiedDisplayName = "BG Box of Resentment",
+		unidentifiedResourceName = "원한의상자",
+		unidentifiedDescriptionName = {
+			"Adds +20 ATK",
+			"for 60 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		identifiedDisplayName = "BG Box of Resentment",
+		identifiedResourceName = "원한의상자",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"Adds +20 ATK",
+			"for 60 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25106] = {
+		unidentifiedDisplayName = "BG Box of Drowsiness",
+		unidentifiedResourceName = "졸린상자",
+		unidentifiedDescriptionName = {
+			"Adds +20 MATK",
+			"for 60 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		identifiedDisplayName = "BG Box of Drowsiness",
+		identifiedResourceName = "졸린상자",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"Adds +20 MATK",
+			"for 60 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},	
+	
+	[25107] = {
+		unidentifiedDisplayName = "BG Fireproof Potion",
+		unidentifiedResourceName = "레지스트_화",
+		unidentifiedDescriptionName = {
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^FF0000Fire^000000 property at the cost of increasing",
+			"damage from the ^0000BBWater^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Fireproof Potion",
+		identifiedResourceName = "레지스트_화",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^FF0000Fire^000000 property at the cost of increasing",
+			"damage from the ^0000BBWater^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25108] = {
+		unidentifiedDisplayName = "BG Coldproof Potion",
+		unidentifiedResourceName = "레지스트_수",
+		unidentifiedDescriptionName = {
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^0000BBWater^000000 property at the cost of increasing",
+			"damage from the ^7BCC70Wind^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Coldproof Potion",
+		identifiedResourceName = "레지스트_수",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^0000BBWater^000000 property at the cost of increasing",
+			"damage from the ^7BCC70Wind^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25109] = {
+		unidentifiedDisplayName = "BG Earthproof Potion",
+		unidentifiedResourceName = "레지스트_지",
+		unidentifiedDescriptionName = {
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^cc5500Earth^000000 property at the cost of increasing",
+			"damage from the ^FF0000Fire^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Earthproof Potion",
+		identifiedResourceName = "레지스트_지",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^cc5500Earth^000000 property at the cost of increasing",
+			"damage from the ^FF0000Fire^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25110] = {
+		unidentifiedDisplayName = "BG Thunderproof Potion",
+		unidentifiedResourceName = "레지스트_풍",
+		unidentifiedDescriptionName = {
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^7BCC70Wind^000000 property at the cost of increasing",
+			"damage from the ^cc5500Earth^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Thunderproof Potion",
+		identifiedResourceName = "레지스트_풍",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A potion that will",
+			"temporarily increase",
+			"the user's resistance",
+			"to the ^7BCC70Wind^000000 property at the cost of increasing",
+			"damage from the ^cc5500Earth^000000",
+			"property for the potion's active duration.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25111] = {
+		unidentifiedDisplayName = "BG Box of Sunlight",
+		unidentifiedResourceName = "햇빛의상자",
+		unidentifiedDescriptionName = {
+			"Enables the user to",
+			"to detect any hidden enemies for 30 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		identifiedDisplayName = "BG Box of Sunlight",
+		identifiedResourceName = "햇빛의상자",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"Enables the user to",
+			"to detect any hidden enemies for 30 seconds.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777720^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25112] = {
+		unidentifiedDisplayName = "BG Whole Roast",
+		unidentifiedResourceName = "힘요리07",
+		unidentifiedDescriptionName = {
+			"A great meal for",
+			"meat lovers, this",
+			"roast is spiced up",
+			"with a special sauce.",
+			"STR +7",
+			"Weight: ^777777100^000000"
+		},
+		identifiedDisplayName = "BG Whole Roast",
+		identifiedResourceName = "힘요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A great meal for",
+			"meat lovers, this",
+			"roast is spiced up",
+			"with a special sauce.",
+			"STR +7",
+			"Weight: ^777777100^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25113] = {
+		unidentifiedDisplayName = "BG Steamed Alligator with Vegetable",
+		unidentifiedResourceName = "어질요리07",
+		unidentifiedDescriptionName = {
+			"A special Umbala",
+			"dish made with",
+			"steamed alligator",
+			"meat wrapped in",
+			"vegetables.",
+			"AGI +7",
+			"Weight: ^77777780^000000"
+		},
+		identifiedDisplayName = "BG Steamed Alligator with Vegetable",
+		identifiedResourceName = "어질요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A special Umbala",
+			"dish made with",
+			"steamed alligator",
+			"meat wrapped in",
+			"vegetables.",
+			"AGI +7",
+			"Weight: ^77777780^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25114] = {
+		unidentifiedDisplayName = "BG Sumptuous Feast",
+		unidentifiedResourceName = "바탈요리07",
+		unidentifiedDescriptionName = {
+			"A magnificent feast",
+			"fit for gods that would make mortals cry",
+			"tears of joy. VIT +7",
+			"Weight: ^77777740^000000"
+		},
+		identifiedDisplayName = "BG Sumptuous Feast",
+		identifiedResourceName = "바탈요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A magnificent feast",
+			"fit for gods that would make mortals cry",
+			"tears of joy. VIT +7",
+			"Weight: ^77777740^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25115] = {
+		unidentifiedDisplayName = "BG Special Royal Jelly Herbal Tea",
+		unidentifiedResourceName = "인트요리07",
+		unidentifiedDescriptionName = {
+			"An herbal tea mixed",
+			"with royal jelly that",
+			"has a pungent scent,",
+			"but a refreshing flavor. INT +7",
+			"Weight: ^77777780^000000"
+		},
+		identifiedDisplayName = "BG Special Royal Jelly Herbal Tea",
+		identifiedResourceName = "인트요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"An herbal tea mixed",
+			"with royal jelly that",
+			"has a pungent scent,",
+			"but a refreshing flavor. INT +7",
+			"Weight: ^77777780^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25116] = {
+		unidentifiedDisplayName = "BG Soul Haunted Bread",
+		unidentifiedResourceName = "덱요리07",
+		unidentifiedDescriptionName = {
+			"A deliciously sweet",
+			"bread, haunted by",
+			"flavor. DEX +7",
+			"Weight: ^77777780^000000"
+		},
+		identifiedDisplayName = "BG Soul Haunted Bread",
+		identifiedResourceName = "덱요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A deliciously sweet",
+			"bread, haunted by",
+			"flavor. DEX +7",
+			"Weight: ^77777780^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25117] = {
+		unidentifiedDisplayName = "BG Assorted Shish Kebob",
+		unidentifiedResourceName = "럭요리07",
+		unidentifiedDescriptionName = {
+			"Marinated meat and",
+			"vegetables roasted",
+			"on a skewer. LUK +7",
+			"Weight: ^77777780^000000"
+		},
+		identifiedDisplayName = "BG Assorted Shish Kebob",
+		identifiedResourceName = "럭요리07",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"Marinated meat and",
+			"vegetables roasted",
+			"on a skewer. LUK +7",
+			"Weight: ^77777780^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},	
+	
+	[25118] = {
+		unidentifiedDisplayName = "BG Abrasive",
+		unidentifiedResourceName = "그린에일",
+		unidentifiedDescriptionName = {
+			"An abrasive that",
+			"adds sharpness to",
+			"a weapon. Increases",
+			"CRIT by 30",
+			"for 5 minutes.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Abrasive",
+		identifiedResourceName = "그린에일",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"An abrasive that",
+			"adds sharpness to",
+			"a weapon. Increases",
+			"CRIT by 30",
+			"for 5 minutes.",
+			"If you are incapacitated,",
+			"the item effect will disappear.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25119] = {
+		unidentifiedDisplayName = "BG Bottle Grenade",
+		unidentifiedResourceName = "야자열매폭탄",
+		unidentifiedDescriptionName = {
+			"A bottle containing flammable liquid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Bottle Grenade",
+		identifiedResourceName = "야자열매폭탄",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A bottle containing flammable liquid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25120] = {
+		unidentifiedDisplayName = "BG Acid Bottle",
+		unidentifiedResourceName = "사과폭탄",
+		unidentifiedDescriptionName = {
+			"A bottle holding highly corrosive acid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Acid Bottle",
+		identifiedResourceName = "사과폭탄",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A bottle holding highly corrosive acid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25121] = {
+		unidentifiedDisplayName = "BG Poison Bottle",
+		unidentifiedResourceName = "데들리포이즌병",
+		unidentifiedDescriptionName = {
+			"A skeleton shaped bottle which contains deadly poison.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777710^000000"
+		},
+		identifiedDisplayName = "BG Poison Bottle",
+		identifiedResourceName = "데들리포이즌병",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A skeleton shaped bottle which contains deadly poison.",
+			"^FFFFFF_^000000",
+			"Weight: ^77777710^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25122] = {
+		unidentifiedDisplayName = "BG Cobweb",
+		unidentifiedResourceName = "거미줄",
+		unidentifiedDescriptionName = {
+			"A sticky spider's web made of surprisingly strong threadlike fibers.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Cobweb",
+		identifiedResourceName = "거미줄",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A sticky spider's web made of surprisingly strong threadlike fibers.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25123] = {
+		unidentifiedDisplayName = "BG Glistening Coat",
+		unidentifiedResourceName = "코팅약",
+		unidentifiedDescriptionName = {
+			"A bottle which contains shining liquid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Glistening Coat",
+		identifiedResourceName = "코팅약",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A bottle which contains shining liquid.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25124] = {
+		unidentifiedDisplayName = "BG Plant Bottle",
+		unidentifiedResourceName = "식인식물병",
+		unidentifiedDescriptionName = {
+			"A bottle containing a dormant Flora.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Plant Bottle",
+		identifiedResourceName = "식인식물병",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A bottle containing a dormant Flora.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25125] = {
+		unidentifiedDisplayName = "BG Crystal Fragment",
+		unidentifiedResourceName = "수정조각",
+		unidentifiedDescriptionName = {
+			"A small piece of a pretty crystal that looks like it has a symbol of an eye in its center.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		identifiedDisplayName = "BG Crystal Fragment",
+		identifiedResourceName = "수정조각",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"A small piece of a pretty crystal that looks like it has a symbol of an eye in its center.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777771^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25126] = {
+		unidentifiedDisplayName = "BG Blue Gemstone",
+		unidentifiedResourceName = "블루젬스톤",
+		unidentifiedDescriptionName = {
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		identifiedDisplayName = "BG Blue Gemstone",
+		identifiedResourceName = "블루젬스톤",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25127] = {
+		unidentifiedDisplayName = "BG Red Gemstone",
+		unidentifiedResourceName = "레드젬스톤",
+		unidentifiedDescriptionName = {
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		identifiedDisplayName = "BG Red Gemstone",
+		identifiedResourceName = "레드젬스톤",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25128] = {
+		unidentifiedDisplayName = "BG Yellow Gemstone",
+		unidentifiedResourceName = "옐로우젬스톤",
+		unidentifiedDescriptionName = {
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		identifiedDisplayName = "BG Yellow Gemstone",
+		identifiedResourceName = "옐로우젬스톤",
+		identifiedDescriptionName = {
+			"^0000FF[Used only during BG]^000000",
+			"An enchanted crystal that is used in conjuction with certain magic spells. Once used, it is powerless and immediately destroyed.",
+			"^FFFFFF_^000000",
+			"Weight: ^7777773^000000"
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	
+	[25200] = {
+		unidentifiedDisplayName = "WoE Slim Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Slim Potion Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF175^000000 ^FF0000WoE^000000 White Slim Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25201] = {
+		unidentifiedDisplayName = "WoE White Potion Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE White Potion Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF80^000000 ^FF0000WoE^000000 White Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25202] = {
+		unidentifiedDisplayName = "WoE Blue Potion Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Blue Potion Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF80^000000 ^FF0000WoE^000000 Blue Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25203] = {
+		unidentifiedDisplayName = "WoE Speed Potion Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Speed Potion Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF15^000000 ^FF0000WoE^000000 Speed Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25204] = {
+		unidentifiedDisplayName = "WoE Gloom Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Gloom Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF15^000000 ^FF0000WoE^000000 Box of Gloom."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25205] = {
+		unidentifiedDisplayName = "WoE Resentment Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Resentment Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF15^000000 ^FF0000WoE^000000 Box of Resentment."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25206] = {
+		unidentifiedDisplayName = "WoE Drowsiness Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Drowsiness Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF15^000000 ^FF0000WoE^000000 Box of Drowsiness."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25207] = {
+		unidentifiedDisplayName = "WoE Fireproof Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Fireproof Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF15^000000 ^FF0000WoE^000000 Fireproof Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25208] = {
+		unidentifiedDisplayName = "WoE Coldproof Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Coldproof Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF15^000000 ^FF0000WoE^000000 Coldproof Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25209] = {
+		unidentifiedDisplayName = "WoE Earthproof Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Earthproof Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF15^000000 ^FF0000WoE^000000 Earthproof Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25210] = {
+		unidentifiedDisplayName = "WoE Thunderproof Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Thunderproof Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF15^000000 ^FF0000WoE^000000 Thunderproof Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25211] = {
+		unidentifiedDisplayName = "WoE Sunlight Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Sunlight Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF5^000000 ^FF0000WoE^000000 Box of Sunlight."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25212] = {
+		unidentifiedDisplayName = "WoE Whole Roast Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Whole Roast Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF5^000000 ^FF0000WoE^000000 Whole Roast (STR +7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25213] = {
+		unidentifiedDisplayName = "WoE Alligator Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Alligator Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF5^000000 ^FF0000WoE^000000 Steamed Alligator with Vegetable (AGI +7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25214] = {
+		unidentifiedDisplayName = "WoE Sumptuous Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Sumptuous Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF5^000000 ^FF0000WoE^000000 Sumptuous Feast (VIT +7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25215] = {
+		unidentifiedDisplayName = "WoE Jelly Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Jelly Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF5^000000 ^FF0000WoE^000000 Special Royal Jelly Herbal Tea (INT +7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25216] = {
+		unidentifiedDisplayName = "WoE Soul Haunted Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Soul Haunted Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF5^000000 ^FF0000WoE^000000 Soul Haunted Bread (DEX +7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25217] = {
+		unidentifiedDisplayName = "WoE Kebob Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Kebob Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF5^000000 ^FF0000WoE^000000 Assorted Shish Kebob (LUK + 7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25218] = {
+		unidentifiedDisplayName = "WoE Abrasive Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Abrasive Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF3^000000 ^FF0000WoE^000000 Abrasive."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25219] = {
+		unidentifiedDisplayName = "WoE Acid Demonstration Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Acid Demonstration Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF200^000000 ^FF0000WoE^000000 Acid Demonstration Bottle."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25220] = {
+		unidentifiedDisplayName = "WoE Poison Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Poison Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF40^000000 ^FF0000WoE^000000 Poison Bottle."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25221] = {
+		unidentifiedDisplayName = "WoE Cobweb Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Cobweb Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF25^000000 ^FF0000WoE^000000 Cobweb."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	
+	[25222] = {
+		unidentifiedDisplayName = "WoE Glistening Coat Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Glistening Coat Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF20^000000 ^FF0000WoE^000000 Glistening Coat."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25223] = {
+		unidentifiedDisplayName = "WoE Plant Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Plant Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF20^000000 ^FF0000WoE^000000 Plant Bottle."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25224] = {
+		unidentifiedDisplayName = "WoE Crystal Fragment Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Crystal Fragment Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF30^000000 ^FF0000WoE^000000 Crystal Fragment."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25300] = {
+		unidentifiedDisplayName = "BG Slim Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Slim Potion Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF150^000000 ^FF0000BG^000000 White Slim Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25301] = {
+		unidentifiedDisplayName = "BG White Potion Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG White Potion Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF125^000000 ^FF0000BG^000000 White Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25302] = {
+		unidentifiedDisplayName = "BG Blue Potion Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Blue Potion Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF125^000000 ^FF0000BG^000000 Blue Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25303] = {
+		unidentifiedDisplayName = "BG Speed Potion Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Speed Potion Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF15^000000 ^FF0000BG^000000 Speed Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25304] = {
+		unidentifiedDisplayName = "BG Gloom Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Gloom Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF25^000000 ^FF0000BG^000000 Box of Gloom."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25305] = {
+		unidentifiedDisplayName = "BG Resentment Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Resentment Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF25^000000 ^FF0000BG^000000 Box of Resentment."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25306] = {
+		unidentifiedDisplayName = "BG Drowsiness Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Drowsiness Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF25^000000 ^FF0000BG^000000 Box of Drowsiness."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	[25307] = {
+		unidentifiedDisplayName = "BG Fireproof Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Fireproof Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF25^000000 ^FF0000BG^000000 Fireproof Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25308] = {
+		unidentifiedDisplayName = "BG Coldproof Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Coldproof Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF25^000000 ^FF0000BG^000000 Coldproof Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25309] = {
+		unidentifiedDisplayName = "BG Earthproof Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Earthproof Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF25^000000 ^FF0000BG^000000 Earthproof Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25310] = {
+		unidentifiedDisplayName = "BG Thunderproof Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Thunderproof Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF25^000000 ^FF0000BG^000000 Thunderproof Potion."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25311] = {
+		unidentifiedDisplayName = "BG Sunlight Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Sunlight Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF20^000000 ^FF0000BG^000000 Box of Sunlight."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25312] = {
+		unidentifiedDisplayName = "BG Whole Roast Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Whole Roast Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF5^000000 ^FF0000BG^000000 Whole Roast (STR +7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25313] = {
+		unidentifiedDisplayName = "BG Alligator Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Alligator Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF7^000000 ^FF0000BG^000000 Steamed Alligator with Vegetable (AGI +7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25314] = {
+		unidentifiedDisplayName = "BG Sumptuous Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Sumptuous Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF7^000000 ^FF0000BG^000000 Sumptuous Feast (VIT +7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25315] = {
+		unidentifiedDisplayName = "BG Jelly Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Jelly Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF7^000000 ^FF0000BG^000000 Special Royal Jelly Herbal Tea (INT +7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25316] = {
+		unidentifiedDisplayName = "BG Soul Haunted Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Soul Haunted Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF7^000000 ^FF0000BG^000000 Soul Haunted Bread (DEX +7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25317] = {
+		unidentifiedDisplayName = "BG Kebob Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Kebob Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF7^000000 ^FF0000BG^000000 Assorted Shish Kebob (LUK + 7)."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25318] = {
+		unidentifiedDisplayName = "BG Abrasive Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Abrasive Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF10^000000 ^FF0000BG^000000 Abrasive."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25319] = {
+		unidentifiedDisplayName = "BG Acid Demonstration Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Acid Demonstration Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF50^000000 ^FF0000BG^000000 Acid Bottle & ^0000FF50^000000 ^FF0000BG^000000 Bottle Grenade."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25320] = {
+		unidentifiedDisplayName = "BG Poison Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Poison Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF15^000000 ^FF0000BG^000000 Poison Bottle."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	[25321] = {
+		unidentifiedDisplayName = "BG Cobweb Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Cobweb Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF50^000000 ^FF0000BG^000000 Cobweb."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	
+	[25322] = {
+		unidentifiedDisplayName = "BG Glistening Coat Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Glistening Coat Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF30^000000 ^FF0000BG^000000 Glistening Coat."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25323] = {
+		unidentifiedDisplayName = "BG Plant Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Plant Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF35^000000 ^FF0000BG^000000 Plant Bottle."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25324] = {
+		unidentifiedDisplayName = "BG Crystal Fragment Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Crystal Fragment Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF40^000000 ^FF0000BG^000000 Crystal Fragment."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+
+	
+	[25400] = {
+		unidentifiedDisplayName = "BG Blue Gemstone Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Blue Gemstone Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF240^000000 ^FF0000BG^000000 Blue Gemstone."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25401] = {
+		unidentifiedDisplayName = "BG Yellow Gemstone Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Yellow Gemstone Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF60^000000 ^FF0000BG^000000 Yellow Gemstone."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25402] = {
+		unidentifiedDisplayName = "BG Red Gemstone Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "BG Red Gemstone Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF120^000000 ^FF0000BG^000000 Red Gemstone."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25403] = {
+		unidentifiedDisplayName = "WoE Blue Gemstone Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Blue Gemstone Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF240^000000 ^FF0000WoE^000000 Blue Gemstone."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25404] = {
+		unidentifiedDisplayName = "WoE Yellow Gemstone Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Yellow Gemstone Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF60^000000 ^FF0000WoE^000000 Yellow Gemstone."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},
+	
+	[25405] = {
+		unidentifiedDisplayName = "WoE Red Gemstone Box",
+		unidentifiedResourceName = "불량학생선물상자",
+		unidentifiedDescriptionName = {
+		},
+		identifiedDisplayName = "WoE Red Gemstone Box",
+		identifiedResourceName = "불량학생선물상자",
+		identifiedDescriptionName = {
+			"Contains ^0000FF120^000000 ^FF0000WoE^000000 Red Gemstone."
+		},
+		slotCount = 0,
+		ClassNum = 0
+	},

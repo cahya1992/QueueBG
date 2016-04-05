@@ -1,0 +1,274 @@
+// ==============================================================================
+// BattleGround System - queue Rush, by Kubix. (Hercules edition)
+// ==============================================================================
+
+-	script	Rush	FAKE_NPC,{
+	end;
+	
+OnGuillameQuit:
+	bg_leave;
+	if( bg_get_data($@Guill_BG, 0) == 0 || bg_get_data($@Croix_BG, 0) == 0 )
+		donpcevent "Rush::OnMatchEnd";	
+	setquest 8506;
+	end;
+	
+OnCroixQuit:
+	bg_leave;
+	if( bg_get_data($@Guill_BG, 0) == 0 || bg_get_data($@Croix_BG, 0) == 0 )
+		donpcevent "Rush::OnMatchEnd";
+	setquest 8506;
+	end;
+	
+OnGuillameDie:
+OnCroixDie:
+	end;
+
+OnSetRotation:
+	set .Castle$,"rush_cas04"; set .GX,270; set .GY,292; set .CX,270; set .CY,288; end;
+
+OnInit:
+	setwall "rush_cas04",266,290,10,6,0,"Rush_wall_d";
+	setcell "rush_cas04",266,286,275,295,cell_basilica,1;
+
+	set .Index,1;
+	$@Rush = 0;
+	donpcevent "Rush::OnSetRotation";
+	end;
+
+OnStartBattleground:
+	if( $@Rush )
+		end;
+
+	set $@Rush, 1;
+	set .Guillaume_Score, 0;
+	set .Croix_Score, 0;
+
+	bg_monster 0,.Castle$,245,167,"Emperium",2107,"Rush::OnEmperium";
+	set .Defender, 0; // No Defender
+	sleep 2000;
+	bg_warp $@Guill_BG,.Castle$,100,280;
+	bg_warp $@Croix_BG,.Castle$,100,280;
+
+	initnpctimer;
+	initnpctimer "Rush_Respawn";
+	end;
+
+OnTimer60000:
+	mapannounce .Castle$,"Battle of Rush will ends in 6 minutes",1,0xDDA0DD;
+	end;
+
+OnTimer360000:
+	mapannounce .Castle$,"Battle of Rush will ends in 1 minute",1,0xDDA0DD;
+	end;
+
+OnEmperium:
+	if( $@Rush != 1 )
+		end;
+	if( .Defender == 0 )
+	{ // First Capture
+		initnpctimer;
+		set .Defender,getcharid(4);
+		if( .Defender == $@Guill_BG )
+		{
+			set .Guillaume_Score,1;
+			mapannounce .Castle$,"General Guillaume : Castle captured, now prepare to Defend it!!",1,0x0000FF;
+			bg_warp $@Croix_BG, "rush_cas04",270,291;
+		}
+		else
+		{
+			set .Croix_Score,1;
+			mapannounce .Castle$,"Prince Croix : Castle captured, now prepare to Defend it!!",1,0xFF0000;
+			bg_warp $@Guill_BG, "rush_cas04",270,291;
+		}
+
+		bg_updatescore .Castle$,.Guillaume_Score,.Croix_Score;
+
+		// Emperium =====================
+		bg_monster .Defender,.Castle$,245,167,"Emperium",2107,"Rush::OnEmperium";
+		// ======================================
+		initnpctimer "Rush_Respawn";
+
+		sleep 5000;
+		if( .Defender == $@Guill_BG )
+			mapannounce .Castle$,"Prince Croix : Capture the Castle, it's our last chance to Win!!",1,0xFF0000;
+		else
+			mapannounce .Castle$,"General Guillaume : Capture the Castle, it's our last chance to Win!!",1,0x0000FF;
+		end;
+	}
+	
+	// Second Capture
+	if( .Defender == $@Guill_BG )
+	{
+		set .Croix_Score,2;
+		mapannounce .Castle$,"Prince Croix : Castle captured, we won the Battle!!",1,0xFF0000;
+	}
+	else
+	{
+		set .Guillaume_Score,2;
+		mapannounce .Castle$,"General Guillaume : Castle captured, we won the Battle!!",1,0x0000FF;
+	}
+	donpcevent "Rush::OnMatchEnd";
+	end;
+
+OnTimer420000:
+	if( .Defender == 0 )
+		mapannounce .Castle$,"Castle captured Fail. No winners",1,0xDDA0DD;
+	else if( .Defender == $@Guill_BG )
+	{
+		set .Guillaume_Score,3;
+		mapannounce .Castle$,"General Guillaume : Castle protected, we won the Battle!!",1,0x0000FF;
+	}
+	else
+	{
+		set .Croix_Score,3;
+		mapannounce .Castle$,"Prince Croix : Castle protected, we won the Battle!!",1,0xFF0000;
+	}
+	donpcevent "Rush::OnMatchEnd";
+	end;
+
+OnMatchEnd:
+	$@BGStatus = 1;
+	stopnpctimer;
+	stopnpctimer "Rush_Respawn";
+	killmonster .Castle$,"Rush::OnEmperium";
+	bg_updatescore .Castle$,.Guillaume_Score,.Croix_Score;
+	// =======================================================
+	// Team Rewards
+	// =======================================================
+	set .@Reward, 15;
+	if( .Guillaume_Score > .Croix_Score )
+		set .@Won,0;
+	else	
+		set .@Won,2;
+
+	bg_reward $@Guill_BG,7773,.@Reward,0,8510,"BG_RUSH",1,7,.@Won;
+	// =======================================================
+	set .@Reward, 15;
+	if( .Croix_Score > .Guillaume_Score )
+		set .@Won,0;
+	else
+		set .@Won,2;
+
+	bg_reward $@Croix_BG,7773,.@Reward,0,8510,"BG_RUSH",1,7,.@Won;
+	// =======================================================
+	mapannounce .Castle$,"Battle of Rush will stop 3 in seconds!",1,0xDDA0DD;
+	sleep 1000;
+	bg_destroy $@Guill_BG;
+	set $@Guill_BG, 0;
+	bg_destroy $@Croix_BG;
+	set $@Croix_BG, 0;
+	mapwarp .Castle$,"bat_room",155,150;
+	sleep 1000;
+	maprespawnguildid .Castle$,0,3; // Just in case someone else
+	sleep 1200;
+	set $@Rush, 0;
+	set .Guillaume_Score, 0;
+	set .Croix_Score, 0;
+	bg_updatescore .Castle$,.Guillaume_Score,.Croix_Score;
+	sleep 2000;
+	donpcevent $@RegNPC$;
+	end;
+}
+
+// Battleground Respawn
+// *********************************************************************
+
+-	script	Rush_Respawn	FAKE_NPC,{
+	end;
+
+OnTimer24000:
+	set .RushCastle$,getvariableofnpc(.Castle$,"Rush");
+	set .@Defender,getvariableofnpc(.Defender,"Rush");
+	end;
+
+OnTimer25000:
+	areapercentheal .RushCastle$,266,286,275,295,100,100;
+	if( .@Defender == 0 )
+		areawarp .RushCastle$,266,286,275,295,.RushCastle$,100,280;
+	else if( $@Guill_BG == .@Defender )
+	{
+		areawarp .RushCastle$,266,291,275,295,.RushCastle$,116,89;
+		areawarp .RushCastle$,266,286,275,289,.RushCastle$,100,280;
+	}
+	else
+	{
+		areawarp .RushCastle$,266,291,275,295,.RushCastle$,100,280;
+		areawarp .RushCastle$,266,286,275,289,.RushCastle$,116,89;
+	}
+	initnpctimer;
+	end;
+}
+
+// Battleground Therapist
+// *********************************************************************
+
+rush_cas04,266,292,6	script	Therapist in battle#rh7	4_F_SISTER,{
+	mes "[Therapist in battle]";
+	mes "Just close your eyes, and take a deep breathe.";
+	mes "You can be free from pain.";
+	specialeffect2 312;
+	percentheal 100,100;
+	repairall;
+	close2;
+	openstorage;
+	end;
+}
+
+rush_cas04,266,288,6	script	Therapist in battle#rh8	4_F_SISTER,{
+	mes "[Therapist in battle]";
+	mes "Just close your eyes, and take a deep breathe.";
+	mes "You can be free from pain.";
+	specialeffect2 312;
+	percentheal 100,100;
+	repairall;
+	close2;
+	openstorage;
+	end;
+}
+
+// Warp Portals
+// *********************************************************************
+rush_cas04,106,217,0	warp	rush407	1,1,rush_cas04,131,15	
+rush_cas04,115,210,0	warp	rush408	1,1,rush_cas04,92,215	
+rush_cas04,135,15,0	warp	rush407-1	1,1,rush_cas04,110,217	
+rush_cas04,135,92,0	warp	rush402-1	1,1,rush_cas04,34,282	
+rush_cas04,152,92,0	warp	rush404-1	1,1,rush_cas04,59,255	
+rush_cas04,154,16,0	warp	rush414	1,1,rush_cas04,252,11	
+rush_cas04,17,206,0	warp	rush406-1	1,1,rush_cas04,29,219	
+rush_cas04,212,46,0	warp	rush415	1,1,rush_cas04,225,158	
+rush_cas04,225,154,0	warp	rush415-1	1,1,rush_cas04,212,42	
+rush_cas04,237,74,0	warp	rush412-1	1,1,rush_cas04,62,213	
+rush_cas04,256,11,0	warp	rush414-1	1,1,rush_cas04,159,16	
+rush_cas04,266,47,0	warp	rush409-1	1,1,rush_cas04,45,175	
+rush_cas04,27,215,0	warp	rush406-2	1,1,rush_cas04,17,202	
+rush_cas04,34,286,0	warp	rush402	1,1,rush_cas04,131,92	
+rush_cas04,38,243,0	warp	rush406	1,1,rush_cas04,29,219	
+rush_cas04,38,259,0	warp	rush403-1	1,1,rush_cas04,43,271	
+rush_cas04,42,175,0	warp	rush409	1,1,rush_cas04,266,43	
+rush_cas04,43,191,0	warp	rush410-1	1,1,rush_cas04,70,185	
+rush_cas04,47,271,0	warp	rush403	1,1,rush_cas04,38,255	
+rush_cas04,50,248,0	warp	rush405	1,1,rush_cas04,54,229	
+rush_cas04,58,232,0	warp	rush405-1	1,1,rush_cas04,62,213	
+rush_cas04,63,255,0	warp	rush404	1,1,rush_cas04,156,92	
+rush_cas04,65,215,0	warp	rush412	1,1,rush_cas04,233,74	
+rush_cas04,66,223,0	warp	rush401	1,1,rush_cas04,96,53	
+rush_cas04,70,182,0	warp	rush410	1,1,rush_cas04,39,191	
+rush_cas04,79,244,0	warp	rush413-1	1,1,rush_cas04,91,250	
+rush_cas04,88,248,0	warp	rush411-1	1,1,rush_cas04,76,242	
+rush_cas04,90,218,0	warp	rush408-1	1,1,rush_cas04,111,210	
+rush_cas04,92,53,0	warp	rush401-1	1,1,rush_cas04,62,223	
+rush_cas04,93,209,0	warp	rush411	1,1,rush_cas04,92,250	
+rush_cas04,95,251,0	warp	rush413	1,1,rush_cas04,91,209	
+
+// MapFlags
+// *********************************************************************
+
+rush_cas04	mapflag	battleground	2
+rush_cas04	mapflag	nomemo
+rush_cas04	mapflag	nosave	SavePoint
+rush_cas04	mapflag	noteleport
+rush_cas04	mapflag	nowarp
+rush_cas04	mapflag	nowarpto
+rush_cas04	mapflag	noreturn
+rush_cas04	mapflag	nobranch
+rush_cas04	mapflag	nopenalty
