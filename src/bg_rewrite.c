@@ -3,16 +3,15 @@
 // battleground.c
 // original code was find in public.
 // ======================================
-// ====== Ищем #define HERCULES_CORE, ниже добавляем:
+// ====== After #define HERCULES_CORE add:
 #include "../common/utils.h"
 
-// крутим немного ниже, ищем #include "common/timer.h" и после
-// добавляем :
+// After #include "common/timer.h" add:
 #include "log.h"
 #include "quest.h"
 
-// ищем функцию bg_send_dot_remove
-// меняем её на эту:
+// Find function bg_send_dot_remove
+// and change to this:
 int bg_send_dot_remove(struct map_session_data *sd)
 {
 	struct battleground_data *bgd;
@@ -27,7 +26,7 @@ int bg_send_dot_remove(struct map_session_data *sd)
 	return true;
 }
 
-// после неё добавляем :
+// after bg_send_dot_remove function add :
 
 void bg_team_rewards(int bg_id, int nameid, int amount, int kafrapoints, int quest_id, const char *var, int add_value, int bg_arena, int bg_result)
 {
@@ -68,8 +67,8 @@ void bg_team_rewards(int bg_id, int nameid, int amount, int kafrapoints, int que
 	}
 }
 
-// Ищем функцию bg_member_respawn
-// == Меняем её на эту:
+// find function bg_member_respawn
+// == and change to this:
 
 bool bg_member_respawn(struct map_session_data *sd) {
 	struct battleground_data *bgd;
@@ -89,8 +88,8 @@ bool bg_member_respawn(struct map_session_data *sd) {
 }
 
 
-// Ищем функцию bg_create
-// меняем её на эту:
+// Find function bg_create
+// and change to this:
 
 int bg_create(unsigned short map_index, short rx, short ry, const char *ev, const char *dev) {
 	struct battleground_data *bgd;
@@ -111,7 +110,7 @@ int bg_create(unsigned short map_index, short rx, short ry, const char *ev, cons
 	return bgd->bg_id;
 }
 
-// ниже добавляем:
+// after bg_create function add:
 
 int bg_reveal_pos_sub(struct block_list *bl, va_list ap)
 {
@@ -176,9 +175,9 @@ void bg_team_get_kafrapoints(int bg_id, int amount)
 }
 
 
-// Ищем метод battleground_defaults (внизу)
-// и после bg->team_search = bg_team_search;
-// добавляем:
+// find battleground_defaults method
+// and after bg->team_search = bg_team_search;
+// add:
 	bg->team_rewards = bg_team_rewards;
 	bg->team_getitem = bg_team_getitem;
 	bg->team_get_kafrapoints = bg_team_get_kafrapoints;
@@ -190,34 +189,33 @@ void bg_team_get_kafrapoints(int bg_id, int amount)
 // battleground.h
 // ======================
 
-// ищем struct battleground_data
-// после // Logout Event
-// добавляем :
+// find struct battleground_data
+// and after // Logout Event
+// add :
 int reveal_pos_sub, reveal_flag;
 
-// ищем struct battleground_interface
-// после :
+// find struct battleground_interface
+// and after :
 int (*team_db_final) (DBKey key, DBData *data, va_list ap);
-// добавляем:
-	void (*team_rewards) (int bg_id, int nameid, int amount, int kafrapoints, int quest_id, const char *var, int add_value, int bg_arena, int bg_result);
-	void (*team_getitem) (int bg_id, int nameid, int amount);
-	void (*team_get_kafrapoints) (int bg_id, int amount);
-	int (*reveal_pos_sub) (struct block_list *bl, va_list ap);
+// add:
+void (*team_rewards) (int bg_id, int nameid, int amount, int kafrapoints, int quest_id, const char *var, int add_value, int bg_arena, int bg_result);
+void (*team_getitem) (int bg_id, int nameid, int amount);
+void (*team_get_kafrapoints) (int bg_id, int amount);
+int (*reveal_pos_sub) (struct block_list *bl, va_list ap);
 	
-// === Меняем void (*send_dot_remove) (struct map_session_data *sd);
-// = на:
+// === change -> void (*send_dot_remove) (struct map_session_data *sd);
+// = to:
 int (*send_dot_remove) (struct map_session_data *sd);
 	
 // ==================
 // script.c
 // ==================
 
-// Ищем:
+// Find:
 //-----------------------------------------------------------------------------
 // buildin functions
-//
 
-// ===== после добавляем :
+// ===== add :
 
 int viewpointmap_sub(struct block_list *bl, va_list ap)
 {
@@ -362,8 +360,8 @@ BUILDIN(bg_team_reveal)
 }
 
 
-// Меняем скрипт.команду bg_create_team
-// на :
+// change script command <bg_create_team>
+// to :
 /* New Battlegrounds Stuff */
 /* bg_team_create(map_name,respawn_x,respawn_y) */
 /* returns created team id or -1 when fails */
@@ -382,8 +380,8 @@ BUILDIN(bg_create_team) {
 
 	x = script_getnum(st,3);
 	y = script_getnum(st,4);
-	ev = script_getstr(st,5); // Logout Event
-	dev = script_getstr(st,6); // Die Event
+	ev = script_getstr(st,5); // Logout Event [kubix]
+	dev = script_getstr(st,6); // Die Event [kubix]
 	
 	if( (bg_id = bg->create(map_index, x, y, ev, dev)) == 0 ) { // Creation failed
 		script_pushint(st,-1);
@@ -413,10 +411,10 @@ BUILDIN(bg_reward)
 	return true;
 }
 
-// ==== крутим вниз, после :
+// ==== after :
 struct script_function BUILDIN[] = {
 // ==========================================
-// добавляем :
+// add :
 // ==========================================
 		BUILDIN_DEF(bg_reward,"iiiiisiii"),
 		BUILDIN_DEF(bg_team_reveal,"i"),
@@ -426,11 +424,11 @@ struct script_function BUILDIN[] = {
 		BUILDIN_DEF(bg_getkafrapoints,"ii"),
 		BUILDIN_DEF(bg_single,"isii"),
 		
-// === меняем BUILDIN_DEF(bg_create_team,"sii"),
-// на:
+// === change -> BUILDIN_DEF(bg_create_team,"sii"),
+// to:
 BUILDIN_DEF(bg_create_team,"siiss"),
 // ==========================================		
 // === map.h
-// = ищем int (*addflooritem), и после него добавляем:
+// = find int (*addflooritem), add:
 	int (*addflooritem_area)(const struct block_list* bl, int m, int x, int y, int nameid, int amount); // [Kubix]
 	

@@ -1,5 +1,4 @@
-﻿// Заменяем свои предметы с указанными ID на эти:
-// Делает все бг вещи передаваемыми/продаваемыми и тп
+﻿// This code enables the following items to be dropped / selled and etc.
 
 
 {

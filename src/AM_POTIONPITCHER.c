@@ -1,4 +1,4 @@
-﻿// Сначала прочтите файл new_item_mode.с
+﻿// read the  new_item_mode.с first!
 
 		case AM_POTIONPITCHER:
 			{
