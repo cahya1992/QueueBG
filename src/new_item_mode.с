@@ -1,7 +1,7 @@
 ﻿//==========================
-// идем в ../src/map/itemdb.h
-// ищем enum item_itemid {
-// в конце добавляем:
+// goto ../src/map/itemdb.h
+// find enum item_itemid {
+// add after:
 
 	// Kubix special items:
 	ITEMID_COBWEB				 = 1025,
@@ -70,10 +70,10 @@
 	
 	
 // ==============================
-// идем в ../src/map/pc.c
-// ищем структуру pc_isUseitem
-// после switch( nameid ) { // TODO: Is there no better way to handle this, other than hardcoding item IDs?
-// добавляем:
+// goto ../src/map/pc.c
+// find structure pc_isUseitem
+// after switch( nameid ) { // TODO: Is there no better way to handle this, other than hardcoding item IDs?
+// add:
 
 		case ITEMID_WOESLIMPOT:
 		case ITEMID_WOEBLUEPOT:
@@ -123,9 +123,9 @@
 			break;
 
 // ==================================
-// идем в ../src/map/skill.c
-// ищем структуру skill_condition skill_get_requirement	
-// меняем проверку:
+// goto ../src/map/skill.c
+// find structure skill_condition skill_get_requirement	
+// change:
 		if (itemid_isgemstone(req.itemid[i]) && skill_id != HW_GANBANTEIN) {
 			if (sd->special_state.no_gemstone) {
 				// All gem skills except Hocus Pocus and Ganbantein can cast for free with Mistress card [helvetica]
@@ -147,7 +147,7 @@
 			}
 		}
 			
-// ================= На:
+// ================= To:
 		if (itemid_isgemstone(req.itemid[i]) && skill_id != HW_GANBANTEIN) {
 			if (sd->special_state.no_gemstone) {
 				// All gem skills except Hocus Pocus and Ganbantein can cast for free with Mistress card [helvetica]
@@ -238,7 +238,7 @@
 		}		
 
 
-// =========== крутим ниже, и после:
+// =========== go below and after:
 
 		if( skill_id >= HT_SKIDTRAP && skill_id <= HT_TALKIEBOX && pc->checkskill(sd, RA_RESEARCHTRAP) > 0){
 			int16 item_index;
@@ -251,7 +251,7 @@
 			break;
 		}		
 		
-// ======= добавляем:
+// ========= add:
 
 		// Special BG & WoE items by Kubix
 		if (req.itemid[i] == ITEMID_ACID_BOTTLE)
@@ -455,8 +455,8 @@
 		
 		
 		
-// ========= Летим выше, строка 2254~ (//Spirit of Wizard blocks Kaite's reflection)
-// ========= меняем проверку if(reflecttype == 2 ....) на:
+// ========= line 2254~ (//Spirit of Wizard blocks Kaite's reflection)
+// ========= change if(reflecttype == 2 <all code>) to:
 
 			//Spirit of Wizard blocks Kaite's reflection
 			if (reflecttype == 2 && sc && sc->data[SC_SOULLINK] && sc->data[SC_SOULLINK]->val2 == SL_WIZARD) {
@@ -501,9 +501,9 @@
 				additional_effects = false;
 
 				
-// ==== Идем ниже, ищем скилл AM_POTIONPITCHER
-// Меняем код скилла на код, указаный в файле AM_POTIONPITCHER.c!
+// ==== Find skill AM_POTIONPITCHER
+// And change AM_POTIONPITCHER code to code that shown in the AM_POTIONPITCHER.c file!
 
 
 
-// ==== Ищем скилл CR_SLIMPITCHER и заменяем его код на код указаный в CR_SLIMPITCHER.c!
+// ==== Find skill CR_SLIMPITCHER and chage code CR_SLIMPITCHER to code that shown in the CR_SLIMPITCHER.c!
