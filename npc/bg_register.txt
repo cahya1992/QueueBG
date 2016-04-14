@@ -35,7 +35,7 @@ OnJoinBG:
 	
 	for( .@i = 0; .@i < .BG_Max[ .Index ]; .@i ++ )
 	{
-		if( qiget(.@qid1) == ( .MultipleCheck == 1? get_unique_id():getcharip() ) || qiget(.@qid2) == ( .MultipleCheck == 1? get_unique_id():getcharip() ) )
+		if( qiget(.@qid1) == ( .MultipleCheck == 1? getcharid(0):getcharip() ) || qiget(.@qid2) == ( .MultipleCheck == 1? getcharid(0):getcharip() ) )
 		{
 			mes "^D2691E[Battle Requiter]^000000";
 			mes "You already in queue.";
@@ -61,7 +61,7 @@ OnJoinBG:
 				if( getarraysize( $@Croix_QID ) > getarraysize( $@Guill_QID ) )
 				{
 					
-					if( !queueadd( $@Guill_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					if( !queueadd( $@Guill_Duplicate, ( .MultipleCheck == 1? getcharid(0):getcharip() ) ) )
 					{
 						mes "^D2691E[Battle Requiter]^000000";
 						mes "You already in queue";
@@ -74,7 +74,7 @@ OnJoinBG:
 				}
 				else if( getarraysize( $@Croix_QID ) < getarraysize( $@Guill_QID ) )
 				{
-					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? getcharid(0):getcharip() ) ) )
 					{
 						mes "^D2691E[Battle Requiter]^000000";
 						mes "You already in queue";
@@ -88,7 +88,7 @@ OnJoinBG:
 				}
 				else
 				{
-					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? getcharid(0):getcharip() ) ) )
 					{
 						mes "^D2691E[Battle Requiter]^000000";
 						mes "You already in queue";
@@ -116,7 +116,7 @@ OnJoinBG:
 			{
 				if( getarraysize( $@Croix_QID ) > getarraysize( $@Guill_QID ) )
 				{
-					if( !queueadd( $@Guill_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					if( !queueadd( $@Guill_Duplicate, ( .MultipleCheck == 1? getcharid(0):getcharip() ) ) )
 					{
 						mes "^D2691E[Battle Requiter]^000000";
 						mes "You already in queue";
@@ -136,7 +136,7 @@ OnJoinBG:
 				}
 				else if( getarraysize( $@Croix_QID ) < getarraysize( $@Guill_QID ) )
 				{
-					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? getcharid(0):getcharip() ) ) )
 					{
 						mes "^D2691E[Battle Requiter]^000000";
 						mes "You already in queue";
@@ -157,7 +157,7 @@ OnJoinBG:
 				else
 				{
 
-					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) ) )
+					if( !queueadd( $@Croix_Duplicate, ( .MultipleCheck == 1? getcharid(0):getcharip() ) ) )
 					{
 						mes "^D2691E[Battle Requiter]^000000";
 						mes "You already in queue";
@@ -188,7 +188,7 @@ OnJoinBG:
 		
 OnInit:
 	// ===== Multiple Windows checking by ?
-	// = 1 - Gepard Shield
+	// = 1 - Disabled
 	// = 2 - IP
 	.MultipleCheck = 1;
 	
@@ -312,18 +312,18 @@ OnLeaveBG:
 	.@Q_IT1 = queueiterator( $@Croix_Duplicate );
 	.@Q_IT2 = queueiterator( $@Guill_Duplicate );
 	
-	if( qiget(.@Q_IT1) == ( .MultipleCheck == 1? get_unique_id():getcharip() ) )
+	if( qiget(.@Q_IT1) == ( .MultipleCheck == 1? getcharid(0):getcharip() ) )
 	{
-		queueremove( $@Croix_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) );
+		queueremove( $@Croix_Duplicate, ( .MultipleCheck == 1? getcharid(0):getcharip() ) );
 		for( .@a = 0; .@a < getarraysize( $@Croix_QID ); .@a ++ )
 			if( $@Croix_QID[ .@a ] == getcharid(3) )
 				deletearray $@Croix_QID[ .@a ], 1;
 		
 		$@Croix --;
 	}
-	else if( qiget(.@Q_IT2) == ( .MultipleCheck == 1? get_unique_id():getcharip() ) )
+	else if( qiget(.@Q_IT2) == ( .MultipleCheck == 1? getcharid(0):getcharip() ) )
 	{
-		queueremove( $@Guill_Duplicate, ( .MultipleCheck == 1? get_unique_id():getcharip() ) );
+		queueremove( $@Guill_Duplicate, ( .MultipleCheck == 1? getcharid(0):getcharip() ) );
 			for( .@a = 0; .@a < getarraysize( $@Guill_QID ); .@a ++ )
 				if( $@Guill_QID[ .@a ] == getcharid(3) )
 					deletearray $@Guill_QID[ .@a ], 1;
