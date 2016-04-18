@@ -63,12 +63,12 @@ OnValidateScore:
 	if( .Croix_Score <= 0 )
 	{ // Guillaume Won
 		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_WinnerAmount,0,8505,"BG_TDM",1,4,0;
-		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,2;
+		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The Guillaume army has won the Battle of Flavius TD!",1,0x0000FF;
 	}
 	else if( .Guillaume_Score <= 0 )
 	{ // Croix Won
-		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,2;
+		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,0;
 		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_WinnerAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The Croix army has won the Battle of Flavius TD!",1,0xFF0000;
 	}
@@ -98,19 +98,19 @@ OnTimer900000:
 	if( .Guillaume_Score > .Croix_Score )
 	{ // Guillaume Won
 		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_WinnerAmount,0,8505,"BG_TDM",1,4,0;
-		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,2;
+		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The Guillaume army has won the Battle of Flavius TD!",1,0x0000FF;
 	}
 	else if( .Guillaume_Score < .Croix_Score )
 	{ // Croix Won
-		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,2;
+		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,0;
 		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_WinnerAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The Croix army has won the Battle of Flavius TD!",1,0xFF0000;
 	}
 	else
 	{
-		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_TieAmount,0,8505,"BG_TDM",1,4,1;
-		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_TieAmount,0,8505,"BG_TDM",1,4,1;
+		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_TieAmount,0,8505,"BG_TDM",1,4,0;
+		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_TieAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The battle is over. This is a Tie...!",1,0x808000;
 	}
 	donpcevent "Flavius_TD::OnMatchEnd";
