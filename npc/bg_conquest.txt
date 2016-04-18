@@ -408,29 +408,20 @@ OnMatchEnd:
 	// =======================================================
 	// Team Rewards
 	// =======================================================
-	set .@Reward, 15;
 	set .@Won,2;
 
 	if( .Score >= 6 )
-	{ // Emperium Taken
-		set .@Reward, .@Reward + 9;
-		set .@Won,0;
-	}
+		set .@Won, 0;
 
-	bg_reward .Atacker,7773,.@Reward,0,8509,"BG_CON",1,6,.@Won;
+	bg_reward .Atacker,$@BG_RewardID,( .@Won? $@BG_WinnerAmount:$@BG_LooserAmount ),0,8509,"BG_CON",1,6,0;
 
 	set .Score, 6 - .Score; // Switch for Defender
-
-	set .@Reward, 15;
-	set .@Won,2;
-
+	set .@Won, 2;
+	
 	if( .Score >= 1 )
-	{ // Emperium Defended
-		set .@Reward, .@Reward + 9;
-		set .@Won,0;
-	}
+		set .@Won, 0;
 
-	bg_reward .Defender,7773,.@Reward,0,8509,"BG_CON",1,6,.@Won;
+	bg_reward .Defender,$@BG_RewardID,( .@Won? $@BG_WinnerAmount:$@BG_LooserAmount ),0,8509,"BG_CON",1,6,0;
 	// =======================================================
 	mapannounce .Castle$,"Battle of Conquest will stop 3 in seconds!",1,0xFFA500;
 	sleep 1000;

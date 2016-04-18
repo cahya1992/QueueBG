@@ -42,9 +42,9 @@ OnStartBattleground:
 	set .Guillaume_Score, 1;
 	set .Croix_Score, 1;
 	sleep 2000;
-	bg_warp $@Guill_BG,"bat_b03",328,150;
-	bg_warp $@Croix_BG,"bat_b03",62,150;
-	sleep 3000;
+	bg_warp $@Guill_BG,"bat_b03",328,$@BG_LooserAmount0;
+	bg_warp $@Croix_BG,"bat_b03",62,$@BG_LooserAmount0;
+	sleep $@BG_WinnerAmount00;
 	bg_team_reveal $@Guill_BG;
 	bg_team_reveal $@Croix_BG;
 	donpcevent "#guitd_respawn::OnBGStart";
@@ -62,26 +62,24 @@ OnValidateScore:
 
 	if( .Croix_Score <= 0 )
 	{ // Guillaume Won
-		bg_reward $@Guill_BG,7773,30,0,8505,"BG_TDM",1,4,0;
-		bg_reward $@Croix_BG,7773,15,0,8505,"BG_TDM",1,4,2;
+		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_WinnerAmount,0,8505,"BG_TDM",1,4,0;
+		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The Guillaume army has won the Battle of Flavius TD!",1,0x0000FF;
 	}
 	else if( .Guillaume_Score <= 0 )
 	{ // Croix Won
-		bg_reward $@Guill_BG,7773,15,0,8505,"BG_TDM",1,4,2;
-		bg_reward $@Croix_BG,7773,30,0,8505,"BG_TDM",1,4,0;
+		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,0;
+		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_WinnerAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The Croix army has won the Battle of Flavius TD!",1,0xFF0000;
 	}
 	else if( .@Croix == 0 )
 	{ // All Croix Players quit
-		set .@Rate, 99 - .Croix_Score;
-		bg_reward $@Guill_BG,7773,30 * .@Rate / 99,0,8505,"BG_TDM",1,4,0;
+		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_WinnerAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The Guillaume army has won the Battle of Flavius TD!",1,0x0000FF;
 	}
 	else if( .@Guillaume == 0 )
 	{ // All Guillaume Players quit
-		set .@Rate, 99 - .Guillaume_Score;
-		bg_reward $@Croix_BG,7773,30 * .@Rate / 99,0,8505,"BG_TDM",1,4,0;
+		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_WinnerAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The Croix army has won the Battle of Flavius TD!",1,0xFF0000;
 	}
 	else end;
@@ -99,20 +97,20 @@ OnTimer840000:
 OnTimer900000:
 	if( .Guillaume_Score > .Croix_Score )
 	{ // Guillaume Won
-		bg_reward $@Guill_BG,7773,30,0,8505,"BG_TDM",1,4,0;
-		bg_reward $@Croix_BG,7773,15,0,8505,"BG_TDM",1,4,2;
+		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_WinnerAmount,0,8505,"BG_TDM",1,4,0;
+		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The Guillaume army has won the Battle of Flavius TD!",1,0x0000FF;
 	}
 	else if( .Guillaume_Score < .Croix_Score )
 	{ // Croix Won
-		bg_reward $@Guill_BG,7773,15,0,8505,"BG_TDM",1,4,2;
-		bg_reward $@Croix_BG,7773,30,0,8505,"BG_TDM",1,4,0;
+		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,0;
+		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_WinnerAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The Croix army has won the Battle of Flavius TD!",1,0xFF0000;
 	}
 	else
 	{
-		bg_reward $@Guill_BG,7773,15,0,8505,"BG_TDM",1,4,1;
-		bg_reward $@Croix_BG,7773,15,0,8505,"BG_TDM",1,4,1;
+		bg_reward $@Guill_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,0;
+		bg_reward $@Croix_BG,$@BG_RewardID,$@BG_LooserAmount,0,8505,"BG_TDM",1,4,0;
 		mapannounce "bat_b03","The battle is over. This is a Tie...!",1,0x808000;
 	}
 	donpcevent "Flavius_TD::OnMatchEnd";
@@ -147,7 +145,7 @@ OnReset:
 	set $@Guill_BG, 0;
 	set $@Croix_BG, 0;
 	sleep 1000;
-	mapwarp "bat_b03","bat_room",155,150;
+	mapwarp "bat_b03","bat_room",$@BG_LooserAmount5,$@BG_LooserAmount0;
 	sleep 1000;
 	maprespawnguildid "bat_b03",0,3; // Just in case someone else
 	bg_updatescore "bat_b03",99,99;
@@ -164,7 +162,7 @@ bat_b03,390,13,5	script	Therapist in battle#td1	4_F_SISTER,{
 	{
 	case 2:
 		bg_leave;
-		warp "bat_room",155,150;
+		warp "bat_room",$@BG_LooserAmount5,$@BG_LooserAmount0;
 		break;
 	case 1:
 		mes "[Therapist in battle]";
@@ -185,7 +183,7 @@ bat_b03,10,293,5	script	Therapist in battle#td2	4_F_SISTER,{
 	{
 	case 2:
 		bg_leave;
-		warp "bat_room",155,150;
+		warp "bat_room",$@BG_LooserAmount5,$@BG_LooserAmount0;
 		break;
 	case 1:
 		mes "[Therapist in battle]";
@@ -221,7 +219,7 @@ OnTimer24000:
 
 OnTimer25000:
 	areapercentheal "bat_b03",382,2,397,17,100,100;
-	areawarp "bat_b03",382,2,397,17,"bat_b03",306,138,327,161;
+	areawarp "bat_b03",382,2,397,17,"bat_b03",$@BG_WinnerAmount6,138,327,161;
 	initnpctimer;
 	end;
 }
@@ -254,14 +252,14 @@ OnTimer25000:
 -	script	Guillaume camp#bat	1_FLAG_LION,{ end; }
 -	script	Croix camp#bat	1_FLAG_EAGLE,{ end; }
 
-bat_b03,304,231,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_1	1_FLAG_LION
+bat_b03,$@BG_WinnerAmount4,231,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_1	1_FLAG_LION
 bat_b03,319,231,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_2	1_FLAG_LION
-bat_b03,304,218,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_3	1_FLAG_LION
+bat_b03,$@BG_WinnerAmount4,218,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_3	1_FLAG_LION
 bat_b03,319,218,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_4	1_FLAG_LION
-bat_b03,304,231,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_5	1_FLAG_LION
-bat_b03,304,231,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_6	1_FLAG_LION
+bat_b03,$@BG_WinnerAmount4,231,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_5	1_FLAG_LION
+bat_b03,$@BG_WinnerAmount4,231,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_6	1_FLAG_LION
 bat_b03,335,142,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_7	1_FLAG_LION
-bat_b03,335,157,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_8	1_FLAG_LION
+bat_b03,335,$@BG_LooserAmount7,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_8	1_FLAG_LION
 bat_b03,390,16,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_9	1_FLAG_LION
 bat_b03,292,163,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_10	1_FLAG_LION
 bat_b03,292,136,1	duplicate(Guillaume camp#bat)	Guillaume camp#td_11	1_FLAG_LION
@@ -279,8 +277,8 @@ bat_b03,59,137,1	duplicate(Croix camp#bat)	Croix camp#td_8	1_FLAG_EAGLE
 bat_b03,10,296,1	duplicate(Croix camp#bat)	Croix camp#td_9	1_FLAG_EAGLE
 bat_b03,110,162,1	duplicate(Croix camp#bat)	Croix camp#td_10	1_FLAG_EAGLE
 bat_b03,110,137,1	duplicate(Croix camp#bat)	Croix camp#td_11	1_FLAG_EAGLE
-bat_b03,152,120,1	duplicate(Croix camp#bat)	Croix camp#td_12	1_FLAG_EAGLE
-bat_b03,158,114,1	duplicate(Croix camp#bat)	Croix camp#td_13	1_FLAG_EAGLE
+bat_b03,$@BG_LooserAmount2,120,1	duplicate(Croix camp#bat)	Croix camp#td_12	1_FLAG_EAGLE
+bat_b03,$@BG_LooserAmount8,114,1	duplicate(Croix camp#bat)	Croix camp#td_13	1_FLAG_EAGLE
 
 // MapFlags
 // *********************************************************************

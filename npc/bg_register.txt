@@ -187,6 +187,13 @@ OnJoinBG:
 	}
 		
 OnInit:
+
+	// = BG Rewards:
+	$@BG_RewardID = 7773; (War Badge)
+	
+	$@BG_WinnerAmount = 15; // Reward amount for winning team
+	$@BG_LooserAmount = 10; // Reward amount for loosing team
+	
 	// ===== Multiple Windows checking by ?
 	// = 1 - Disabled
 	// = 2 - IP
