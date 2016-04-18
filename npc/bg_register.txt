@@ -191,8 +191,12 @@ OnInit:
 	// = BG Rewards:
 	$@BG_RewardID = 7773; (War Badge)
 	
-	$@BG_WinnerAmount = 15; // Reward amount for winning team
-	$@BG_LooserAmount = 10; // Reward amount for loosing team
+	$@BG_WinnerAmount 	= 15; // Reward amount for winning team
+	$@BG_LooserAmount 	= 10; // Reward amount for loosing team
+	$@BG_TieAmount		= 5;  // Reward amount for Tie.
+	
+	// = Flavius Score (Kills for end game):
+	$@Flavius_Score = 99;
 	
 	// ===== Multiple Windows checking by ?
 	// = 1 - Disabled
