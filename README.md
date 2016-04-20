@@ -15,7 +15,7 @@ bg_single<br>
 bg_create_team (added OnPCDie and OnPCLogout events.)<br>
 
 
-# Some documentation about script commands:
+# Some documentation about script commands:<br>
 
-*bg_single( <BattleID>, <map>, <x>, <y> );
+*bg_single( < BattleID >, < map >, < x >, < y > );<br>
 This command will add attached player to the Battle Group and warps him to the specified coordinates.
