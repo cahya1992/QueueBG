@@ -140,14 +140,14 @@ OnMatchEnd:
 	else	
 		set .@Won,2;
 
-	bg_reward $@Guill_BG,$@BG_RewardID,( .@Won? $@BG_WinnerAmount:$@BG_LooserAmount ),0,8510,"BG_RUSH",1,7,0;
+	bg_reward $@Guill_BG,$@BG_RewardID,( .@Won == 0? $@BG_WinnerAmount:$@BG_LooserAmount ),0,8510,"BG_RUSH",1,7,0;
 	// =======================================================
 	if( .Croix_Score > .Guillaume_Score )
 		set .@Won,0;
 	else
 		set .@Won,2;
 
-	bg_reward $@Croix_BG,$@BG_RewardID,( .@Won? $@BG_WinnerAmount:$@BG_LooserAmount ),0,8510,"BG_RUSH",1,7,0;
+	bg_reward $@Croix_BG,$@BG_RewardID,( .@Won == 0? $@BG_WinnerAmount:$@BG_LooserAmount ),0,8510,"BG_RUSH",1,7,0;
 	// =======================================================
 	mapannounce .Castle$,"Battle of Rush will stop 3 in seconds!",1,0xDDA0DD;
 	sleep 1000;

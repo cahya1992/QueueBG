@@ -413,7 +413,7 @@ OnMatchEnd:
 	if( .Score >= 6 )
 		set .@Won, 0;
 
-	bg_reward .Atacker,$@BG_RewardID,( .@Won == 0? $@BG_WinnerAmount:$@BG_LooserAmount ),0,8509,"BG_CON",1,6,0;
+	bg_reward .Atacker,$@BG_RewardID,( .@Won? $@BG_WinnerAmount:$@BG_LooserAmount ),0,8509,"BG_CON",1,6,0;
 
 	set .Score, 6 - .Score; // Switch for Defender
 	set .@Won, 2;
@@ -421,7 +421,7 @@ OnMatchEnd:
 	if( .Score >= 1 )
 		set .@Won, 0;
 
-	bg_reward .Defender,$@BG_RewardID,( .@Won == 0? $@BG_WinnerAmount:$@BG_LooserAmount ),0,8509,"BG_CON",1,6,0;
+	bg_reward .Defender,$@BG_RewardID,( .@Won? $@BG_WinnerAmount:$@BG_LooserAmount ),0,8509,"BG_CON",1,6,0;
 	// =======================================================
 	mapannounce .Castle$,"Battle of Conquest will stop 3 in seconds!",1,0xFFA500;
 	sleep 1000;
